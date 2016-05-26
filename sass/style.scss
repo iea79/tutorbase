@@ -233,6 +233,12 @@ hr {
 .i-icon--circle-center {
     background-image: image-url('circle-center.png');
 }
+.i-icon--circle-login {
+    background-image: image-url('circle-login.png');
+}
+.i-icon--circle-envelope {
+    background-image: image-url('circle-envelope.png');
+}
 .i-icon--vopros {
     background-image: image-url('vopros.png');
 }
@@ -1579,6 +1585,11 @@ footer {
     		border: 0;
     	}
     }
+}
+.footer__logo {
+	img {
+		max-width: 200px;
+	}
 }
 .footer__info {
 	font-size: 13px;
