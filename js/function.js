@@ -148,4 +148,66 @@ $(document).ready(function() {
 
 	});
 
+	// Login form scripts
+    $('input[name="UF_TYPE"][value="4"]').click();
+
+    $('input[name=PHONE_AUTH]').on('click', function() {
+    	
+	    if ($(this).is(":checked")) {
+	    	console.log('checked')
+	    	$('input[name=LOGIN]').inputmask({"mask": "+9 (999) 999 99 99"});
+	    } else {
+	    	console.log('un-checked');
+	    	$('input[name=LOGIN]').inputmask('remove');
+	    };
+    	
+    });
+
+
+    $('form[name=regform]').change(function () {
+        var isTypeRepetitor = ($(this).find('input[name=UF_TYPE]:checked').val() == 5);
+        if (isTypeRepetitor) $(this).find('.js-offert').show();
+        if (!isTypeRepetitor) $(this).find('.js-offert').hide();
+        var isTypeJur = ($(this).find('input[name=UF_TYPE]:checked').val() == 15);
+        if (isTypeJur) {
+            $(this).find('input[name*=NAME]').attr("placeholder", "Наименование").parent().find("span").html("Наименование");
+        } else {
+            $(this).find('input[name*=NAME]').attr("placeholder", "Имя").parent().find("span").html("Имя");
+        }
+    }).trigger('change');
+
+    $('form[name=regform]').submit(function () {
+        var isTypeRepetitor = ($(this).find('input[name=UF_TYPE]:checked').val() == 5);
+        var isTypeStudent = ($(this).find('input[name=UF_TYPE]:checked').val() == 4);
+        errors = [];
+        if (!$(this).find('input[name=UF_REG_RULES]:checked').length) {
+            errors.push("Вы должны согласится с условиями пользовательского соглашения");
+        }
+        if (errors.length) {
+            $(this).find('div.alert-danger').remove();
+            $(this).find('.alerts-area').after('<div class="alert alert-danger">' + errors.join('<br />') + '</div>');
+
+            return false;
+        }
+        if (isTypeStudent) {
+            if (window.yaCounter32946594)
+                yaCounter32946594.reachGoal('STUDENT_REGISTERED');
+            ga('send', 'event', 'STUDENT', 'REGISTERED');
+        } else if(isTypeRepetitor) {
+            if (window.yaCounter32946594)
+                yaCounter32946594.reachGoal('reg_auth');
+            ga('send', 'event', 'TEACHER', 'REG_AUTH');
+        }
+    });
+
+    // Tooltips
+	$('.i-icon--tooltip').tooltip({
+		trigger: "hover"
+	});
+
+	// Input mask
+	// $(":input").inputmask();
+	$('.tel').inputmask({"mask": "+9 (999) 999 99 99"});
+
+
 });
