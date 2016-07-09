@@ -88,7 +88,7 @@ $(document).ready(function() {
 	});
 
 	// Formstyler
-	$('select').chosen();
+	$('select').chosen({disable_search_threshold: 32});
 
 	// UI Price
 	$("#slider").slider({
@@ -206,7 +206,6 @@ $(document).ready(function() {
 	});
 
 	// Input mask
-	// $(":input").inputmask();
 	$('.tel').inputmask({"mask": "+9 (999) 999 99 99"});
 
 
