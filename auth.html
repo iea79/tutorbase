@@ -16,6 +16,7 @@
 	<script src="js/slick.min.js"></script>
 	<script src="js/chosen.jquery.min.js"></script>
 	<script src="js/tooltip.js"></script>
+	<script src="js/modal.js"></script>
 	<script src="js/inputmask.js"></script>
 	<script src="js/function.js"></script>
 
@@ -307,6 +308,9 @@
                             <div class="h2">
                                 <h2>Авторизация</h2>
                             </div>
+							<div class="alert alert-danger">
+				                Неверный логин или пароль
+			                </div>
                         </div>
                         <!-- begin form_auth -->
                         <form name="form_auth" method="post" action="">
@@ -690,6 +694,226 @@
 	</footer>	<!-- end .footer -->
 
 <div class="go-to-up"></div>
+
+<!-- begin regionChooseModal -->
+<div class="modal fade close-tpl regionChooseModal" id="regionChooseModal" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<span type="button" class="close" data-dismiss="modal"></span>
+			<div class="modal-body">
+				<div class="modal-title">Выбор города</div>
+				<div class="country-tab-box">
+					<a class="country-tab" href="#rossiya" data-toggle="tab">Россия</a>
+				</div>
+				<div class="city-comment">
+					Выберите свой город из списка, или впишите его в форму запроса:
+				</div>
+				<div>
+					<input type="text" placeholder="Введите свой город" id="cityInput" class="city-input ui-autocomplete-input" autocomplete="off">
+				</div>
+
+				<div class="tab-content choose_region_block">
+					<div class="tab-pane active" id="rossiya">
+						<ul>
+							<li>
+								<a href="#" class="popular">Москва</a>
+							</li>
+
+							<li>
+								<a href="#" class="popular">Санкт-Петербург</a>
+							</li>
+
+							<li>
+								<a href="#">Архангельск</a>
+							</li>
+
+							<li>
+								<a href="#">Белгород</a>
+							</li>
+
+							<li>
+								<a href="#">Благовещенск</a>
+							</li>
+
+							<li>
+								<a href="#">Брянск</a>
+							</li>
+
+							<li>
+								<a href="#">Великий Новгород</a>
+							</li>
+
+							<li>
+								<a href="#">Владивосток</a>
+							</li>
+
+							<li>
+								<a href="#">Волгоград</a>
+							</li>
+
+							<li>
+								<a href="#">Воронеж</a>
+							</li>
+
+							<li>
+								<a href="#">Екатеринбург</a>
+							</li>
+
+							<li>
+								<a href="#">Казань</a>
+							</li>
+
+							<li>
+								<a href="#">Калининград</a>
+							</li>
+
+						</ul>
+						<ul>
+							<li>
+								<a href="#">Краснодар</a>
+							</li>
+
+							<li>
+								<a href="#">Красноярск</a>
+							</li>
+
+							<li>
+								<a href="#">Курск</a>
+							</li>
+
+							<li>
+								<a href="#">Магнитогорск</a>
+							</li>
+
+							<li>
+								<a href="#">Набережные Челны</a>
+							</li>
+
+							<li>
+								<a href="#">Нижний Новгород</a>
+							</li>
+
+							<li>
+								<a href="#">Новосибирск</a>
+							</li>
+
+							<li>
+								<a href="#">Омск</a>
+							</li>
+
+							<li>
+								<a href="#">Орёл</a>
+							</li>
+
+							<li>
+								<a href="#">Оренбург</a>
+							</li>
+
+							<li>
+								<a href="#">Пенза</a>
+							</li>
+
+							<li>
+								<a href="#">Пермь</a>
+							</li>
+
+							<li>
+								<a href="#">Петропавловск-Камчатский</a>
+							</li>
+
+						</ul>
+						<ul>
+							<li>
+								<a href="#">Ростов-на-Дону</a>
+							</li>
+
+							<li>
+								<a href="#">Самара</a>
+							</li>
+
+							<li>
+								<a href="#">Саратов</a>
+							</li>
+
+							<li>
+								<a href="#">Севастополь</a>
+							</li>
+
+							<li>
+								<a href="#">Симферополь</a>
+							</li>
+
+							<li>
+								<a href="#">Смоленск</a>
+							</li>
+
+							<li>
+								<a href="#">Сочи</a>
+							</li>
+
+							<li>
+								<a href="#">Ставрополь</a>
+							</li>
+
+							<li>
+								<a href="#">Сургут</a>
+							</li>
+
+							<li>
+								<a href="#">Тверь</a>
+							</li>
+
+							<li>
+								<a href="#">Тольятти</a>
+							</li>
+
+							<li>
+								<a href="#">Томск</a>
+							</li>
+
+							<li>
+								<a href="#">Тула</a>
+							</li>
+
+						</ul>
+						<ul>
+							<li>
+								<a href="#">Тюмень</a>
+							</li>
+
+							<li>
+								<a href="#">Ульяновск</a>
+							</li>
+
+							<li>
+								<a href="#">Уфа</a>
+							</li>
+
+							<li>
+								<a href="#">Челябинск</a>
+							</li>
+
+							<li>
+								<a href="#">Чита</a>
+							</li>
+
+							<li>
+								<a href="#">Якутск</a>
+							</li>
+
+							<li>
+								<a href="#">Ярославль</a>
+							</li>
+
+						</ul>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- end regionChooseModal -->
 
 </body>
 </html>
