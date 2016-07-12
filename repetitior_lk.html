@@ -8,20 +8,23 @@
 	<meta name="description" content="" />
 
 	<link href="css/slick.css" rel="stylesheet" type="text/css" />
-	<link href="css/chosen.css" rel="stylesheet" type="text/css" />
-	<link href="css/bootstrap-datetimepicker.css" rel="stylesheet" type="text/css" />
+	<link href="css/datetimepicker.css" rel="stylesheet" type="text/css" />
 	<link href="css/style.css" rel="stylesheet" type="text/css" />
 
-	<script src="js/jquery.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-	<script src="js/slick.min.js"></script>
 	<script src="js/chosen.jquery.min.js"></script>
+	<script src="js/slick.min.js"></script>
+	<script src="js/select2.full.min.js"></script>
 	<script src="js/tooltip.js"></script>
 	<script src="js/inputmask.js"></script>
 	<script src="js/modal.js"></script>
+	<script src="js/fancybox.js"></script>
 	<script src="js/jquery.fileupload.js"></script>
-	<script src="js/bootstrap-datetimepicker.min.js"></script>
+	<script src="js/jquery.iframe-transport.js"></script>
+	<script src="js/datetimepicker.min.js"></script>
 	<script src="js/jquery-scrolltofixed-min.js"></script>
+	<script src="js/fancybox.js"></script>
 	<script src="js/function.js"></script>
 
 	<link href="//fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic&amp;subset=latin,cyrillic-ext,latin-ext,cyrillic" rel="stylesheet" type="text/css">
@@ -1239,492 +1242,518 @@
 												<input class="form-control" type="text" name="STATUS_DATE" value="">
 											</div>
 											<script>
-												$('.input-block--datepick input').datetimepicker();
+												jQuery('.input-block--datepick input').datetimepicker();
 											</script>
 										</div>
 									</div>
 								</div>
-							</div><!-- .lk-profile__block 5 -->
-
-							<div class="lk-profile__block">
-								<div class="lk-profile__block-heading orange-color">
-									<h4>
-										Образование
-										<span class="required">*</span>
-									</h4>
 								</div>
+								<!-- .lk-profile__block 5 -->								
 
-								<!-- begin adding-in-progress -->								
-						        <div data-tabs-blocks="">
-						        	<div data-tabs-blocks-filters="">
-						        		<div class="active-fliters__list  active-fliters__list--wide"></div>
-						        	</div>
-						        	<div data-tabs-blocks-list="">
+								<div class="lk-profile__block">
+									<div class="lk-profile__block-heading orange-color">
+										<h4>
+											Образование
+											<span class="required">*</span>
+										</h4>
+									</div>
+								<div data-tabs-blocks>
+									<div data-tabs-blocks-filters>
+										<div class="active-fliters__list  active-fliters__list--wide"></div>
+									</div>
+									<div data-tabs-blocks-list>
 
-						        		<div data-tabs-blocks-item="" class="lk-inputs-block" data-tabs-clone="">
-						        			<div class="lk-inputs-block__item">
-						        				<div class="grid">
-						        					<div class="col-12">
-						        						<div class="input-block">
-						        							<label>Вуз *</label>
-						        							<input type="text" class="js-find-univer" data-new-block-name name="EDUC[UNIVER][]" value=""/>        
-						        						</div>
-						        					</div>
-						        					<div class="col-12">
-						        						<div class="input-block">
-						        							<label for="">Факультет</label>
-						        							<input type="text" name="EDUC[FACULTY][]" value=""/>        
-						        						</div>
-						        					</div>
-						        					<div class="col-6">
-						        						<div class="input-block">
-						        							<label>Специальность</label>
-						        							<input type="text" name="EDUC[SPECIALTY][]" value="">
-						        						</div>
-						        					</div>
-						        					<div class="col-3">
-						        						<div class="input-block">
-						        							<label>Год окончания</label>
-						        							<select name="EDUC[YEAR][]" data-formstyler="false">
-						        								<option value="">Год</option>
-						        								<option value="2020" >2020</option>
-						        								<option value="2019" >2019</option>
-						        								<option value="2018" >2018</option>
-						        								<option value="2017" >2017</option>
-						        								<option value="2016" >2016</option>
-						        								<option value="2015" >2015</option>
-						        								<option value="2014" >2014</option>
-						        								<option value="2013" >2013</option>
-						        								<option value="2012" >2012</option>
-						        								<option value="2011" >2011</option>
-						        								<option value="2010" >2010</option>
-						        								<option value="2009" >2009</option>
-						        								<option value="2008" >2008</option>
-						        								<option value="2007" >2007</option>
-						        								<option value="2006" >2006</option>
-						        								<option value="2005" >2005</option>
-						        								<option value="2004" >2004</option>
-						        								<option value="2003" >2003</option>
-						        								<option value="2002" >2002</option>
-						        								<option value="2001" >2001</option>
-						        								<option value="2000" >2000</option>
-						        								<option value="1999" >1999</option>
-						        								<option value="1998" >1998</option>
-						        								<option value="1997" >1997</option>
-						        								<option value="1996" >1996</option>
-						        								<option value="1995" >1995</option>
-						        								<option value="1994" >1994</option>
-						        								<option value="1993" >1993</option>
-						        								<option value="1992" >1992</option>
-						        								<option value="1991" >1991</option>
-						        								<option value="1990" >1990</option>
-						        								<option value="1989" >1989</option>
-						        								<option value="1988" >1988</option>
-						        								<option value="1987" >1987</option>
-						        								<option value="1986" >1986</option>
-						        								<option value="1985" >1985</option>
-						        								<option value="1984" >1984</option>
-						        								<option value="1983" >1983</option>
-						        								<option value="1982" >1982</option>
-						        								<option value="1981" >1981</option>
-						        								<option value="1980" >1980</option>
-						        								<option value="1979" >1979</option>
-						        								<option value="1978" >1978</option>
-						        								<option value="1977" >1977</option>
-						        								<option value="1976" >1976</option>
-						        								<option value="1975" >1975</option>
-						        								<option value="1974" >1974</option>
-						        								<option value="1973" >1973</option>
-						        								<option value="1972" >1972</option>
-						        								<option value="1971" >1971</option>
-						        								<option value="1970" >1970</option>
-						        								<option value="1969" >1969</option>
-						        								<option value="1968" >1968</option>
-						        								<option value="1967" >1967</option>
-						        								<option value="1966" >1966</option>
-						        								<option value="1965" >1965</option>
-						        								<option value="1964" >1964</option>
-						        								<option value="1963" >1963</option>
-						        								<option value="1962" >1962</option>
-						        								<option value="1961" >1961</option>
-						        								<option value="1960" >1960</option>
-						        								<option value="1959" >1959</option>
-						        								<option value="1958" >1958</option>
-						        								<option value="1957" >1957</option>
-						        								<option value="1956" >1956</option>
-						        								<option value="1955" >1955</option>
-						        								<option value="1954" >1954</option>
-						        								<option value="1953" >1953</option>
-						        								<option value="1952" >1952</option>
-						        								<option value="1951" >1951</option>
-						        								<option value="1950" >1950</option>
-						        								<option value="1949" >1949</option>
-						        								<option value="1948" >1948</option>
-						        								<option value="1947" >1947</option>
-						        								<option value="1946" >1946</option>
-						        								<option value="1945" >1945</option>
-						        								<option value="1944" >1944</option>
-						        							</select>
-						        						</div>
-						        					</div>
-						        					<div class="col-3">
-						        						<div class="input-block">
-						        							<label>Часов занятий</label>
-						        							<input type="text" name="EDUC[TIME][]" value="">
-						        						</div>
-						        					</div>
-						        					<div class="col-12">
-						        						<div class="input-block">
-						        							<label>Дополнительная информация об образовании</label>
-						        							<textarea name="EDUC[DESCRIPTION][]"></textarea>
-						        						</div>
-						        					</div>
-						        					<div class="col-5 lk-inputs-block-scan">
-						        						<div class="lk-inputs-block-scan__left">
-						        							<div class="row-top">Скан диплома / сертификата</div>
-						        							<div class="row-middle">Выберите сканированный документ с компьютера</div>
+										<div data-tabs-blocks-item class="lk-inputs-block"     data-tabs-clone>
+											<div class="lk-inputs-block__item">
+												<input type="hidden" name="EDUC[REPETITOR_ID][]" value="">								
+												<input type="hidden" name="EDUC[ID][]" value="">								
 
-						        							<div class="row-bottom scan-files-loaded"></div>
-						        						</div>
-						        						<div class="lk-inputs-block-scan__right">
-						        							<div class="lk-inputs-block-scan__add">
-						        								<input type="file" class="scan-file" name="SCAN_FILES" value="" data-emulate="false">        
-						        							</div>
-						        						</div>
-						        					</div>
-						        					<div class="col-7 lk-profile-direction-bind" data-active-select="1">
-						        						<div class="input-block">
-						        							<label>Привязать к направлению</label>
-						        							<select name="EDUC[UF_SUBJECT][{INDEX}][]" data-replace-string="EDUC[UF_SUBJECT][{INDEX}][]" class="select2-delayed" multiple data-formstyler="false">
-						        								<option  value="186169">Биология</option>
-						        								<option  value="186176">Английский язык</option>
-						        								<option  value="1060538">Джиу-джитсу</option>
-						        								<option  value="878459">Инвестиционное проектирование</option>
-						        								<option  value="503207">1С</option>
-						        								<option  value="256300">3D Моделирование и Графика</option>
-						        								<option  value="711607">SEO оптимизация</option>
-						        								<option  value="257033">Web-дизайн</option>
-						        								<option  value="186242">Автоинструкторы</option>
-						        								<option  value="190323">Автоинструкторы (АКПП)</option>
-						        								<option  value="503208">Администрирование Linux</option>
-						        								<option  value="186200">Азербайджанский язык</option>
-						        								<option  value="186229">Айкидо</option>
-						        								<option  value="613868">Академическая гребля</option>
-						        								<option  value="186222">Аквааэробика</option>
-						        								<option  value="414197">Аккордеон</option>
-						        								<option  value="855116">Акробатика</option>
-						        								<option  value="252672">Актёрское мастерство</option>
-						        								<option  value="905367">Албанский язык</option>
-						        								<option  value="185014">Алгебра</option>
-						        								<option  value="186223">Альпинизм</option>
-						        								<option  value="893228">Аналитическая геометрия</option>
-						        								<option  value="805936">Анатомия</option>
-						        								<option  value="227260">Аниматоры</option>
-						        								<option  value="811257">Анимационная живопись</option>
-						        								<option  value="186188">Арабский язык</option>
-						        								<option  value="607155">Армянский язык</option>
-						        								<option  value="314727">Арфа</option>
-						        								<option  value="772266">Архитектурная графика</option>
-						        								<option  value="965120">Архитектурное макетирование</option>
-						        								<option  value="482246">Астрономия</option>
-						        								<option  value="418667">Аудит</option>
-						        								<option  value="186237">Аэробика</option>
-						        								<option  value="1033746">Аэродинамика летательного аппарата</option>
-						        								<option  value="218949">Бадминтон</option>
-						        								<option  value="893929">Балалайка</option>
-						        								<option  value="728925">Бальные танцы</option>
-						        								<option  value="418670">Банковское Дело</option>
-						        								<option  value="963690">Барное дело</option>
-						        								<option  value="420349">Баскетбол</option>
-						        								<option  value="189256">Баян</option>
-						        								<option  value="698614">Бег</option>
-						        								<option  value="386764">Бильярд</option>
-						        								<option  value="866136">Блокфлейта</option>
-						        								<option  value="186212">Бодибилдинг</option>
-						        								<option  value="186232">Бокс</option>
-						        								<option  value="224526">Болгарский язык</option>
-						        								<option  value="712061">Брейк данс</option>
-						        								<option  value="189259">Бухгалтерия</option>
-						        								<option  value="841594">Бухгалтерский учет (ВУЗ)</option>
-						        								<option  value="186211">Велоспорт</option>
-						        								<option  value="216328">Венгерский язык</option>
-						        								<option  value="257034">Верстка</option>
-						        								<option  value="284842">Видео монтаж</option>
-						        								<option  value="811220">Вин-чунь</option>
-						        								<option  value="314738">Виолончель</option>
-						        								<option  value="909169">Водоснабжение</option>
-						        								<option  value="186247">Вокал</option>
-						        								<option  value="186215">Волейбол</option>
-						        								<option  value="186227">Вольная борьба</option>
-						        								<option  value="728945">Восточные танцы</option>
-						        								<option  value="257050">Высшая математика</option>
-						        								<option  value="270021">Вьетнамский язык</option>
-						        								<option  value="186210">Гандбол</option>
-						        								<option  value="186173">География</option>
-						        								<option  value="861611">Геодезия</option>
-						        								<option  value="185015">Геометрия</option>
-						        								<option  value="909170">Гидравлика</option>
-						        								<option  value="186208">Гимнастика</option>
-						        								<option  value="186245">Гитара</option>
-						        								<option  value="186202">Голландский язык</option>
-						        								<option  value="186239">Гольф</option>
-						        								<option  value="186238">Горные лыжи</option>
-						        								<option  value="186228">Греко-римская борьба</option>
-						        								<option  value="811221">Грепплинг</option>
-						        								<option  value="186199">Греческий язык</option>
-						        								<option  value="186187">Грузинский язык</option>
-						        								<option  value="284674">Дайвинг</option>
-						        								<option  value="397825">Датский язык</option>
-						        								<option  value="772157">Декор</option>
-						        								<option  value="764655">Детали машин</option>
-						        								<option  value="335222">Дефектология</option>
-						        								<option  value="186235">Дзюдо</option>
-						        								<option  value="480236">Диджеинг</option>
-						        								<option  value="772156">Дизайн (ВУЗ)</option>
-						        								<option  value="772183">Дизайн (проект)</option>
-						        								<option  value="1022462">Дирижирование</option>
-						        								<option  value="770062">Домра</option>
-						        								<option  value="186250">Духовые инструменты</option>
-						        								<option  value="190066">Единоборства</option>
-						        								<option  value="950040">Естествознание</option>
-						        								<option  value="772161">Живопись</option>
-						        								<option  value="863010">Журналистика</option>
-						        								<option  value="186193">Иврит</option>
-						        								<option  value="904871">Индонезийский язык</option>
-						        								<option  value="257053">Инженерная графика</option>
-						        								<option  value="861849">Инструктор тренажерного зала</option>
-						        								<option  value="905095">Интернет-маркетинг</option>
-						        								<option  value="186171">Информатика</option>
-						        								<option  value="898868">Ирландский язык</option>
-						        								<option  value="302465">Искусство Бонсай</option>
-						        								<option  value="186182">Испанский язык</option>
-						        								<option  value="186170">История</option>
-						        								<option  value="422323">История Искусств</option>
-						        								<option  value="186181">Итальянский язык</option>
-						        								<option  value="186226">Йога</option>
-						        								<option  value="186201">Казахский язык</option>
-						        								<option  value="278088">Кайтинг</option>
-						        								<option  value="341743">Капоэйра</option>
-						        								<option  value="186231">Карате</option>
-						        								<option  value="854047">Карвинг</option>
-						        								<option  value="401648">Каякинг</option>
-						        								<option  value="883619">Керамика</option>
-						        								<option  value="186234">Кикбоксинг</option>
-						        								<option  value="189261">Кинологи</option>
-						        								<option  value="186179">Китайский язык</option>
-						        								<option  value="186207">Конный спорт</option>
-						        								<option  value="964104">Контрабас</option>
-						        								<option  value="186205">Коньки</option>
-						        								<option  value="711605">Копирайтинг</option>
-						        								<option  value="186183">Корейский язык</option>
-						        								<option  value="243730">Коучи (Психотренеры)</option>
-						        								<option  value="710377">Крикет</option>
-						        								<option  value="841595">Крокет</option>
-						        								<option  value="946994">Кубик Рубика</option>
-						        								<option  value="241859">Кулинарное искусство</option>
-						        								<option  value="803592">Культурология</option>
-						        								<option  value="772165">Ландшафтная графика</option>
-						        								<option  value="815425">Ландшафтный дизайн</option>
-						        								<option  value="186198">Латинский язык</option>
-						        								<option  value="873323">Латышский язык</option>
-						        								<option  value="935381">Легкая атлетика</option>
-						        								<option  value="934788">Линейная алгебра</option>
-						        								<option  value="185017">Литература</option>
-						        								<option  value="493830">Литературное мастерство</option>
-						        								<option  value="1033760">Литовский язык</option>
-						        								<option  value="947064">Логистика</option>
-						        								<option  value="774177">Логопед-дефектолог</option>
-						        								<option  value="210580">Логопеды</option>
-						        								<option  value="186225">ЛФК</option>
-						        								<option  value="240609">Лыжи (беговые)</option>
-						        								<option  value="257055">Макроэкономика</option>
-						        								<option  value="803781">Маркетинг</option>
-						        								<option  value="186175">Математика</option>
-						        								<option  value="893226">Математический анализ</option>
-						        								<option  value="866511">Материаловедение</option>
-						        								<option  value="803912">Машиностроение</option>
-						        								<option  value="879035">Медицинская биохимия</option>
-						        								<option  value="525333">Менеджмент</option>
-						        								<option  value="851804">Микробиология</option>
-						        								<option  value="257054">Микроэкономика</option>
-						        								<option  value="859113">Мировая художественная культура (МХК)</option>
-						        								<option  value="772182">Моделирование</option>
-						        								<option  value="616289">Мозаика</option>
-						        								<option  value="764699">Монгольский язык</option>
-						        								<option  value="186241">Мотоинструкторы</option>
-						        								<option  value="191517">Музыкальное развитие</option>
-						        								<option  value="1033749">Навигация</option>
-						        								<option  value="728930">Народные танцы</option>
-						        								<option  value="191076">Настольный теннис</option>
-						        								<option  value="873332">Настройка  видео-техники</option>
-						        								<option  value="351635">Начальные классы</option>
-						        								<option  value="257052">Начертательная геометрия</option>
-						        								<option  value="186177">Немецкий язык</option>
-						        								<option  value="332983">Нидерландский язык</option>
-						        								<option  value="186186">Норвежский язык</option>
-						        								<option  value="844194">Няни и гувернеры</option>
-						        								<option  value="848824">ОБЖ</option>
-						        								<option  value="186168">Обществознание</option>
-						        								<option  value="284843">Операторское искусство</option>
-						        								<option  value="776386">Ораторское искусство</option>
-						        								<option  value="859340">Орган</option>
-						        								<option  value="866360">Организация движения транспорта</option>
-						        								<option  value="1014861">Основы экономики (школа)</option>
-						        								<option  value="864883">Основы ювелирного искусства</option>
-						        								<option  value="292533">Парапланеризм</option>
-						        								<option  value="866433">Паркур</option>
-						        								<option  value="811214">Пауэрлифтинг</option>
-						        								<option  value="860151">Персидский язык</option>
-						        								<option  value="903827">Пилатес</option>
-						        								<option  value="186240">Плавание</option>
-						        								<option  value="189260">Подготовка к школе</option>
-						        								<option  value="271628">Покер</option>
-						        								<option  value="1014217">Политология</option>
-						        								<option  value="186196">Польский язык</option>
-						        								<option  value="186194">Португальский язык</option>
-						        								<option  value="261224">Право (ВУЗ)</option>
-						        								<option  value="1014862">Правоведение</option>
-						        								<option  value="257031">Программирование</option>
-						        								<option  value="189258">Программирование разное</option>
-						        								<option  value="802566">Проектирование в IT</option>
-						        								<option  value="866356">Производственное планирование</option>
-						        								<option  value="401649">Прыжки в воду</option>
-						        								<option  value="243729">Психологи-Консультанты</option>
-						        								<option  value="243731">Психологические курсы и тренинги</option>
-						        								<option  value="216334">Психология (ВУЗ)</option>
-						        								<option  value="243732">Психотерапевты</option>
-						        								<option  value="805295">Радиоэлектроника</option>
-						        								<option  value="836319">Раннее развитие</option>
-						        								<option  value="1029699">Рафтинг</option>
-						        								<option  value="774178">Резьба по дереву</option>
-						        								<option  value="189257">Рисование</option>
-						        								<option  value="613857">Риторика</option>
-						        								<option  value="334300">Робототехника</option>
-						        								<option  value="186209">Роликовые коньки</option>
-						        								<option  value="414195">Рукоделие</option>
-						        								<option  value="802737">Рукопашный бой</option>
-						        								<option  value="190512">Румынский язык</option>
-						        								<option  value="226936">Русский как Иностранный</option>
-						        								<option  value="185016">Русский язык</option>
-						        								<option  value="726953">Саксофон</option>
-						        								<option  value="852993">Самбо</option>
-						        								<option  value="866531">Самооборона</option>
-						        								<option  value="1031957">Санскрит</option>
-						        								<option  value="186197">Сербский язык</option>
-						        								<option  value="278089">Серфинг</option>
-						        								<option  value="766012">Синтезатор</option>
-						        								<option  value="841824">Системная аналитика</option>
-						        								<option  value="487163">Скалолазание</option>
-						        								<option  value="248725">Сквош</option>
-						        								<option  value="388652">Скейтборд</option>
-						        								<option  value="467005">Скорочтение</option>
-						        								<option  value="186244">Скрипка</option>
-						        								<option  value="861635">Скульптура</option>
-						        								<option  value="1021460">Словацкий язык</option>
-						        								<option  value="699883">Словенский язык</option>
-						        								<option  value="291627">Сметное дело</option>
-						        								<option  value="186219">Сноуборд</option>
-						        								<option  value="728929">Современные танцы</option>
-						        								<option  value="941758">Создание приложений</option>
-						        								<option  value="186246">Сольфеджио</option>
-						        								<option  value="963945">Сомелье</option>
-						        								<option  value="764651">Сопротивление материалов</option>
-						        								<option  value="803682">Социальные педагоги</option>
-						        								<option  value="803899">Социология</option>
-						        								<option  value="698837">Спортивная ходьба</option>
-						        								<option  value="408269">Статистика</option>
-						        								<option  value="432808">Стилистика русского языка</option>
-						        								<option  value="493831">Стихосложение</option>
-						        								<option  value="186220">Стрельба</option>
-						        								<option  value="712039">Стретчинг</option>
-						        								<option  value="861624">Строительство</option>
-						        								<option  value="915695">Сурдоперевод</option>
-						        								<option  value="252673">Сценическая речь</option>
-						        								<option  value="186236">Тайский бокс</option>
-						        								<option  value="211345">Тайский язык</option>
-						        								<option  value="186218">Танцы</option>
-						        								<option  value="186195">Татарский язык</option>
-						        								<option  value="186217">Теннис</option>
-						        								<option  value="284840">Теоретическая механика</option>
-						        								<option  value="711836">Теория вероятности</option>
-						        								<option  value="1060522">Теория информации</option>
-						        								<option  value="764652">Теория механизмов и машин</option>
-						        								<option  value="682450">Теория первой медицинской помощи</option>
-						        								<option  value="929732">Теплогазоснабжение и вентиляция</option>
-						        								<option  value="430494">Тибетский язык</option>
-						        								<option  value="1020051">Товароведение</option>
-						        								<option  value="1031262">Триатлон</option>
-						        								<option  value="186184">Турецкий язык</option>
-						        								<option  value="909166">Туркменский язык</option>
-						        								<option  value="802738">Тхэквандо</option>
-						        								<option  value="771013">Тяжелая атлетика</option>
-						        								<option  value="186249">Ударные инструменты</option>
-						        								<option  value="186185">Украинский язык</option>
-						        								<option  value="858742">Укулеле</option>
-						        								<option  value="1062192">Управление персоналом</option>
-						        								<option  value="860777">Урду</option>
-						        								<option  value="186233">Ушу</option>
-						        								<option  value="186206">Фехтование</option>
-						        								<option  value="186203">Фигурное катание</option>
-						        								<option  value="186174">Физика</option>
-						        								<option  value="257051">Физика (ВУЗ)</option>
-						        								<option  value="866517">Физиология</option>
-						        								<option  value="186224">Физкультура</option>
-						        								<option  value="239733">Философия</option>
-						        								<option  value="186191">Финский язык</option>
-						        								<option  value="186216">Фитнес</option>
-						        								<option  value="496686">Флейта</option>
-						        								<option  value="859443">Флористика</option>
-						        								<option  value="186243">Фортепиано</option>
-						        								<option  value="227014">Фотография</option>
-						        								<option  value="186180">Французский язык</option>
-						        								<option  value="186213">Футбол</option>
-						        								<option  value="186172">Химия</option>
-						        								<option  value="702273">Химия (ВУЗ)</option>
-						        								<option  value="860732">Хинди</option>
-						        								<option  value="186221">Ходьба</option>
-						        								<option  value="186214">Хоккей</option>
-						        								<option  value="235375">Хорватский язык</option>
-						        								<option  value="712054">Хореография</option>
-						        								<option  value="935542">Хэнг драм</option>
-						        								<option  value="186230">Цигун</option>
-						        								<option  value="260428">Цирковые искусства</option>
-						        								<option  value="354520">Черчение</option>
-						        								<option  value="1031347">Чеченский язык</option>
-						        								<option  value="186189">Чешский язык</option>
-						        								<option  value="186204">Шахматы</option>
-						        								<option  value="186190">Шведский язык</option>
-						        								<option  value="481604">Швейное мастерство</option>
-						        								<option  value="811011">Шестовая акробатика</option>
-						        								<option  value="440600">Экология</option>
-						        								<option  value="257056">Эконометрика</option>
-						        								<option  value="191078">Экстремальное вождение</option>
-						        								<option  value="186248">Электрогитара</option>
-						        								<option  value="940516">Электротехника</option>
-						        								<option  value="186192">Эстонский язык</option>
-						        								<option  value="261220">Юриспруденция</option>
-						        								<option  value="186178">Японский язык</option>
-						        							</select>
-						        						</div>
-						        						<div class="lk-profile-direction-bind__link">
-						        							<a href="" data-add-button>Добавить</a>
-						        						</div>
-						        						<div class="active-fliters__list" data-active-filters="1"></div>
-						        					</div>
-						        				</div>
-						        			</div>
-						        			<div class="lk-profile__add-btn align-right">
-						        				<div class="grid-spaceBetween-middle-noGutter">
-						        					<a href="" data-cancel-button>Отменить</a>
-						        					<a class="btn btn--big btn--bordered" href="#" data-confirm-add>Добавить</a>
-						        				</div>
-						        			</div>
+												<div class="grid">
+													<div class="col-12">
+														<div class="input-block">
+															<label>Вуз *</label>
+															<input type="text" class="js-find-univer" data-new-block-name name="EDUC[UNIVER][]" value=""/>								
+															<input type="hidden" name="EDUC[UNIVER_ID][]" value=""/>								
+														</div>
+													</div>
+													<div class="col-12">
+														<div class="input-block">
+															<label for="">Факультет</label>
+															<input type="text" name="EDUC[FACULTY][]" value=""/>								
+														</div>
+													</div>
+													<div class="col-6">
+														<div class="input-block">
+															<label>Специальность</label>
+															<input type="text" name="EDUC[SPECIALTY][]" value=""></div>
+													</div>
+													<div class="col-3">
+														<div class="input-block">
+															<label>Год окончания</label>
+															<select name="EDUC[YEAR][]" data-formstyler="false">
+																<option value="">Год</option>
+																<option value="2020" >2020</option>
+																<option value="2019" >2019</option>
+																<option value="2018" >2018</option>
+																<option value="2017" >2017</option>
+																<option value="2016" >2016</option>
+																<option value="2015" >2015</option>
+																<option value="2014" >2014</option>
+																<option value="2013" >2013</option>
+																<option value="2012" >2012</option>
+																<option value="2011" >2011</option>
+																<option value="2010" >2010</option>
+																<option value="2009" >2009</option>
+																<option value="2008" >2008</option>
+																<option value="2007" >2007</option>
+																<option value="2006" >2006</option>
+																<option value="2005" >2005</option>
+																<option value="2004" >2004</option>
+																<option value="2003" >2003</option>
+																<option value="2002" >2002</option>
+																<option value="2001" >2001</option>
+																<option value="2000" >2000</option>
+																<option value="1999" >1999</option>
+																<option value="1998" >1998</option>
+																<option value="1997" >1997</option>
+																<option value="1996" >1996</option>
+																<option value="1995" >1995</option>
+																<option value="1994" >1994</option>
+																<option value="1993" >1993</option>
+																<option value="1992" >1992</option>
+																<option value="1991" >1991</option>
+																<option value="1990" >1990</option>
+																<option value="1989" >1989</option>
+																<option value="1988" >1988</option>
+																<option value="1987" >1987</option>
+																<option value="1986" >1986</option>
+																<option value="1985" >1985</option>
+																<option value="1984" >1984</option>
+																<option value="1983" >1983</option>
+																<option value="1982" >1982</option>
+																<option value="1981" >1981</option>
+																<option value="1980" >1980</option>
+																<option value="1979" >1979</option>
+																<option value="1978" >1978</option>
+																<option value="1977" >1977</option>
+																<option value="1976" >1976</option>
+																<option value="1975" >1975</option>
+																<option value="1974" >1974</option>
+																<option value="1973" >1973</option>
+																<option value="1972" >1972</option>
+																<option value="1971" >1971</option>
+																<option value="1970" >1970</option>
+																<option value="1969" >1969</option>
+																<option value="1968" >1968</option>
+																<option value="1967" >1967</option>
+																<option value="1966" >1966</option>
+																<option value="1965" >1965</option>
+																<option value="1964" >1964</option>
+																<option value="1963" >1963</option>
+																<option value="1962" >1962</option>
+																<option value="1961" >1961</option>
+																<option value="1960" >1960</option>
+																<option value="1959" >1959</option>
+																<option value="1958" >1958</option>
+																<option value="1957" >1957</option>
+																<option value="1956" >1956</option>
+																<option value="1955" >1955</option>
+																<option value="1954" >1954</option>
+																<option value="1953" >1953</option>
+																<option value="1952" >1952</option>
+																<option value="1951" >1951</option>
+																<option value="1950" >1950</option>
+																<option value="1949" >1949</option>
+																<option value="1948" >1948</option>
+																<option value="1947" >1947</option>
+																<option value="1946" >1946</option>
+																<option value="1945" >1945</option>
+																<option value="1944" >1944</option>
+															</select>
+														</div>
+													</div>
+													<div class="col-3">
+														<div class="input-block">
+															<label>Часов занятий</label>
+															<input type="text" name="EDUC[TIME][]" value=""></div>
+													</div>
+													<div class="col-12">
+														<div class="input-block">
+															<label>Дополнительная информация об образовании</label>
+															<textarea name="EDUC[DESCRIPTION][]"></textarea>
+														</div>
+													</div>
+													<div class="col-5 lk-inputs-block-scan">
+														<div class="lk-inputs-block-scan__left">
+															<div class="row-top">Скан диплома / сертификата</div>
+															<div class="row-middle">Выберите сканированный документ с компьютера</div>
+
+															<div class="row-bottom scan-files-loaded"></div>
+														</div>
+														<div class="lk-inputs-block-scan__right">
+															<div class="lk-inputs-block-scan__add">
+																<input type="file" class="scan-file" name="SCAN_FILES" value="" data-emulate="false">								
+																<input name="EDUC[SCAN_IDS][]" type="hidden" value=""/>								
+															</div>
+														</div>
+													</div>
+
+														<script>
+
+														</script>
+													<div class="col-7 lk-profile-direction-bind" data-active-select="1">
+														<div class="input-block">
+															<label>Привязать к направлению</label>
+															<select name="EDUC[UF_SUBJECT][{INDEX}][]" class="select2-delayed" multiple data-formstyler="false">
+																<option  value="186169">Биология</option>
+																<option  value="186176">Английский язык</option>
+																<option  value="1060538">Джиу-джитсу</option>
+																<option  value="878459">Инвестиционное проектирование</option>
+																<option  value="503207">1С</option>
+																<option  value="256300">3D Моделирование и Графика</option>
+																<option  value="711607">SEO оптимизация</option>
+																<option  value="257033">Web-дизайн</option>
+																<option  value="186242">Автоинструкторы</option>
+																<option  value="190323">Автоинструкторы (АКПП)</option>
+																<option  value="503208">Администрирование Linux</option>
+																<option  value="186200">Азербайджанский язык</option>
+																<option  value="186229">Айкидо</option>
+																<option  value="613868">Академическая гребля</option>
+																<option  value="186222">Аквааэробика</option>
+																<option  value="414197">Аккордеон</option>
+																<option  value="855116">Акробатика</option>
+																<option  value="252672">Актёрское мастерство</option>
+																<option  value="905367">Албанский язык</option>
+																<option  value="185014">Алгебра</option>
+																<option  value="186223">Альпинизм</option>
+																<option  value="893228">Аналитическая геометрия</option>
+																<option  value="805936">Анатомия</option>
+																<option  value="227260">Аниматоры</option>
+																<option  value="811257">Анимационная живопись</option>
+																<option  value="186188">Арабский язык</option>
+																<option  value="607155">Армянский язык</option>
+																<option  value="314727">Арфа</option>
+																<option  value="772266">Архитектурная графика</option>
+																<option  value="965120">Архитектурное макетирование</option>
+																<option  value="482246">Астрономия</option>
+																<option  value="418667">Аудит</option>
+																<option  value="186237">Аэробика</option>
+																<option  value="1033746">Аэродинамика летательного аппарата</option>
+																<option  value="218949">Бадминтон</option>
+																<option  value="893929">Балалайка</option>
+																<option  value="728925">Бальные танцы</option>
+																<option  value="418670">Банковское Дело</option>
+																<option  value="963690">Барное дело</option>
+																<option  value="420349">Баскетбол</option>
+																<option  value="189256">Баян</option>
+																<option  value="698614">Бег</option>
+																<option  value="386764">Бильярд</option>
+																<option  value="866136">Блокфлейта</option>
+																<option  value="186212">Бодибилдинг</option>
+																<option  value="186232">Бокс</option>
+																<option  value="224526">Болгарский язык</option>
+																<option  value="712061">Брейк данс</option>
+																<option  value="189259">Бухгалтерия</option>
+																<option  value="841594">Бухгалтерский учет (ВУЗ)</option>
+																<option  value="186211">Велоспорт</option>
+																<option  value="216328">Венгерский язык</option>
+																<option  value="257034">Верстка</option>
+																<option  value="284842">Видео монтаж</option>
+																<option  value="811220">Вин-чунь</option>
+																<option  value="314738">Виолончель</option>
+																<option  value="909169">Водоснабжение</option>
+																<option  value="186247">Вокал</option>
+																<option  value="186215">Волейбол</option>
+																<option  value="186227">Вольная борьба</option>
+																<option  value="728945">Восточные танцы</option>
+																<option  value="257050">Высшая математика</option>
+																<option  value="270021">Вьетнамский язык</option>
+																<option  value="186210">Гандбол</option>
+																<option  value="186173">География</option>
+																<option  value="861611">Геодезия</option>
+																<option  value="185015">Геометрия</option>
+																<option  value="909170">Гидравлика</option>
+																<option  value="186208">Гимнастика</option>
+																<option  value="186245">Гитара</option>
+																<option  value="186202">Голландский язык</option>
+																<option  value="186239">Гольф</option>
+																<option  value="186238">Горные лыжи</option>
+																<option  value="186228">Греко-римская борьба</option>
+																<option  value="811221">Грепплинг</option>
+																<option  value="186199">Греческий язык</option>
+																<option  value="186187">Грузинский язык</option>
+																<option  value="284674">Дайвинг</option>
+																<option  value="397825">Датский язык</option>
+																<option  value="772157">Декор</option>
+																<option  value="764655">Детали машин</option>
+																<option  value="335222">Дефектология</option>
+																<option  value="186235">Дзюдо</option>
+																<option  value="480236">Диджеинг</option>
+																<option  value="772156">Дизайн (ВУЗ)</option>
+																<option  value="772183">Дизайн (проект)</option>
+																<option  value="1022462">Дирижирование</option>
+																<option  value="770062">Домра</option>
+																<option  value="186250">Духовые инструменты</option>
+																<option  value="190066">Единоборства</option>
+																<option  value="950040">Естествознание</option>
+																<option  value="772161">Живопись</option>
+																<option  value="863010">Журналистика</option>
+																<option  value="186193">Иврит</option>
+																<option  value="904871">Индонезийский язык</option>
+																<option  value="257053">Инженерная графика</option>
+																<option  value="861849">Инструктор тренажерного зала</option>
+																<option  value="905095">Интернет-маркетинг</option>
+																<option  value="186171">Информатика</option>
+																<option  value="898868">Ирландский язык</option>
+																<option  value="302465">Искусство Бонсай</option>
+																<option  value="186182">Испанский язык</option>
+																<option  value="186170">История</option>
+																<option  value="422323">История Искусств</option>
+																<option  value="186181">Итальянский язык</option>
+																<option  value="186226">Йога</option>
+																<option  value="186201">Казахский язык</option>
+																<option  value="278088">Кайтинг</option>
+																<option  value="341743">Капоэйра</option>
+																<option  value="186231">Карате</option>
+																<option  value="854047">Карвинг</option>
+																<option  value="401648">Каякинг</option>
+																<option  value="883619">Керамика</option>
+																<option  value="186234">Кикбоксинг</option>
+																<option  value="189261">Кинологи</option>
+																<option  value="186179">Китайский язык</option>
+																<option  value="186207">Конный спорт</option>
+																<option  value="964104">Контрабас</option>
+																<option  value="186205">Коньки</option>
+																<option  value="711605">Копирайтинг</option>
+																<option  value="186183">Корейский язык</option>
+																<option  value="243730">Коучи (Психотренеры)</option>
+																<option  value="710377">Крикет</option>
+																<option  value="841595">Крокет</option>
+																<option  value="946994">Кубик Рубика</option>
+																<option  value="241859">Кулинарное искусство</option>
+																<option  value="803592">Культурология</option>
+																<option  value="772165">Ландшафтная графика</option>
+																<option  value="815425">Ландшафтный дизайн</option>
+																<option  value="186198">Латинский язык</option>
+																<option  value="873323">Латышский язык</option>
+																<option  value="935381">Легкая атлетика</option>
+																<option  value="934788">Линейная алгебра</option>
+																<option  value="185017">Литература</option>
+																<option  value="493830">Литературное мастерство</option>
+																<option  value="1033760">Литовский язык</option>
+																<option  value="947064">Логистика</option>
+																<option  value="774177">Логопед-дефектолог</option>
+																<option  value="210580">Логопеды</option>
+																<option  value="186225">ЛФК</option>
+																<option  value="240609">Лыжи (беговые)</option>
+																<option  value="257055">Макроэкономика</option>
+																<option  value="803781">Маркетинг</option>
+																<option  value="186175">Математика</option>
+																<option  value="893226">Математический анализ</option>
+																<option  value="866511">Материаловедение</option>
+																<option  value="803912">Машиностроение</option>
+																<option  value="879035">Медицинская биохимия</option>
+																<option  value="525333">Менеджмент</option>
+																<option  value="851804">Микробиология</option>
+																<option  value="257054">Микроэкономика</option>
+																<option  value="859113">Мировая художественная культура (МХК)</option>
+																<option  value="772182">Моделирование</option>
+																<option  value="616289">Мозаика</option>
+																<option  value="764699">Монгольский язык</option>
+																<option  value="186241">Мотоинструкторы</option>
+																<option  value="191517">Музыкальное развитие</option>
+																<option  value="1033749">Навигация</option>
+																<option  value="728930">Народные танцы</option>
+																<option  value="191076">Настольный теннис</option>
+																<option  value="873332">Настройка  видео-техники</option>
+																<option  value="351635">Начальные классы</option>
+																<option  value="257052">Начертательная геометрия</option>
+																<option  value="186177">Немецкий язык</option>
+																<option  value="332983">Нидерландский язык</option>
+																<option  value="186186">Норвежский язык</option>
+																<option  value="844194">Няни и гувернеры</option>
+																<option  value="848824">ОБЖ</option>
+																<option  value="186168">Обществознание</option>
+																<option  value="284843">Операторское искусство</option>
+																<option  value="776386">Ораторское искусство</option>
+																<option  value="859340">Орган</option>
+																<option  value="866360">Организация движения транспорта</option>
+																<option  value="1014861">Основы экономики (школа)</option>
+																<option  value="864883">Основы ювелирного искусства</option>
+																<option  value="292533">Парапланеризм</option>
+																<option  value="866433">Паркур</option>
+																<option  value="811214">Пауэрлифтинг</option>
+																<option  value="860151">Персидский язык</option>
+																<option  value="903827">Пилатес</option>
+																<option  value="186240">Плавание</option>
+																<option  value="189260">Подготовка к школе</option>
+																<option  value="271628">Покер</option>
+																<option  value="1014217">Политология</option>
+																<option  value="186196">Польский язык</option>
+																<option  value="186194">Португальский язык</option>
+																<option  value="261224">Право (ВУЗ)</option>
+																<option  value="1014862">Правоведение</option>
+																<option  value="257031">Программирование</option>
+																<option  value="189258">Программирование разное</option>
+																<option  value="802566">Проектирование в IT</option>
+																<option  value="866356">Производственное планирование</option>
+																<option  value="401649">Прыжки в воду</option>
+																<option  value="243729">Психологи-Консультанты</option>
+																<option  value="243731">Психологические курсы и тренинги</option>
+																<option  value="216334">Психология (ВУЗ)</option>
+																<option  value="243732">Психотерапевты</option>
+																<option  value="805295">Радиоэлектроника</option>
+																<option  value="836319">Раннее развитие</option>
+																<option  value="1029699">Рафтинг</option>
+																<option  value="774178">Резьба по дереву</option>
+																<option  value="189257">Рисование</option>
+																<option  value="613857">Риторика</option>
+																<option  value="334300">Робототехника</option>
+																<option  value="186209">Роликовые коньки</option>
+																<option  value="414195">Рукоделие</option>
+																<option  value="802737">Рукопашный бой</option>
+																<option  value="190512">Румынский язык</option>
+																<option  value="226936">Русский как Иностранный</option>
+																<option  value="185016">Русский язык</option>
+																<option  value="726953">Саксофон</option>
+																<option  value="852993">Самбо</option>
+																<option  value="866531">Самооборона</option>
+																<option  value="1031957">Санскрит</option>
+																<option  value="186197">Сербский язык</option>
+																<option  value="278089">Серфинг</option>
+																<option  value="766012">Синтезатор</option>
+																<option  value="841824">Системная аналитика</option>
+																<option  value="487163">Скалолазание</option>
+																<option  value="248725">Сквош</option>
+																<option  value="388652">Скейтборд</option>
+																<option  value="467005">Скорочтение</option>
+																<option  value="186244">Скрипка</option>
+																<option  value="861635">Скульптура</option>
+																<option  value="1021460">Словацкий язык</option>
+																<option  value="699883">Словенский язык</option>
+																<option  value="291627">Сметное дело</option>
+																<option  value="186219">Сноуборд</option>
+																<option  value="728929">Современные танцы</option>
+																<option  value="941758">Создание приложений</option>
+																<option  value="186246">Сольфеджио</option>
+																<option  value="963945">Сомелье</option>
+																<option  value="764651">Сопротивление материалов</option>
+																<option  value="803682">Социальные педагоги</option>
+																<option  value="803899">Социология</option>
+																<option  value="698837">Спортивная ходьба</option>
+																<option  value="408269">Статистика</option>
+																<option  value="432808">Стилистика русского языка</option>
+																<option  value="493831">Стихосложение</option>
+																<option  value="186220">Стрельба</option>
+																<option  value="712039">Стретчинг</option>
+																<option  value="861624">Строительство</option>
+																<option  value="915695">Сурдоперевод</option>
+																<option  value="252673">Сценическая речь</option>
+																<option  value="186236">Тайский бокс</option>
+																<option  value="211345">Тайский язык</option>
+																<option  value="186218">Танцы</option>
+																<option  value="186195">Татарский язык</option>
+																<option  value="186217">Теннис</option>
+																<option  value="284840">Теоретическая механика</option>
+																<option  value="711836">Теория вероятности</option>
+																<option  value="1060522">Теория информации</option>
+																<option  value="764652">Теория механизмов и машин</option>
+																<option  value="682450">Теория первой медицинской помощи</option>
+																<option  value="929732">Теплогазоснабжение и вентиляция</option>
+																<option  value="430494">Тибетский язык</option>
+																<option  value="1020051">Товароведение</option>
+																<option  value="1031262">Триатлон</option>
+																<option  value="186184">Турецкий язык</option>
+																<option  value="909166">Туркменский язык</option>
+																<option  value="802738">Тхэквандо</option>
+																<option  value="771013">Тяжелая атлетика</option>
+																<option  value="186249">Ударные инструменты</option>
+																<option  value="186185">Украинский язык</option>
+																<option  value="858742">Укулеле</option>
+																<option  value="1062192">Управление персоналом</option>
+																<option  value="860777">Урду</option>
+																<option  value="186233">Ушу</option>
+																<option  value="186206">Фехтование</option>
+																<option  value="186203">Фигурное катание</option>
+																<option  value="186174">Физика</option>
+																<option  value="257051">Физика (ВУЗ)</option>
+																<option  value="866517">Физиология</option>
+																<option  value="186224">Физкультура</option>
+																<option  value="239733">Философия</option>
+																<option  value="186191">Финский язык</option>
+																<option  value="186216">Фитнес</option>
+																<option  value="496686">Флейта</option>
+																<option  value="859443">Флористика</option>
+																<option  value="186243">Фортепиано</option>
+																<option  value="227014">Фотография</option>
+																<option  value="186180">Французский язык</option>
+																<option  value="186213">Футбол</option>
+																<option  value="186172">Химия</option>
+																<option  value="702273">Химия (ВУЗ)</option>
+																<option  value="860732">Хинди</option>
+																<option  value="186221">Ходьба</option>
+																<option  value="186214">Хоккей</option>
+																<option  value="235375">Хорватский язык</option>
+																<option  value="712054">Хореография</option>
+																<option  value="935542">Хэнг драм</option>
+																<option  value="186230">Цигун</option>
+																<option  value="260428">Цирковые искусства</option>
+																<option  value="354520">Черчение</option>
+																<option  value="1031347">Чеченский язык</option>
+																<option  value="186189">Чешский язык</option>
+																<option  value="186204">Шахматы</option>
+																<option  value="186190">Шведский язык</option>
+																<option  value="481604">Швейное мастерство</option>
+																<option  value="811011">Шестовая акробатика</option>
+																<option  value="440600">Экология</option>
+																<option  value="257056">Эконометрика</option>
+																<option  value="191078">Экстремальное вождение</option>
+																<option  value="186248">Электрогитара</option>
+																<option  value="940516">Электротехника</option>
+																<option  value="186192">Эстонский язык</option>
+																<option  value="261220">Юриспруденция</option>
+																<option  value="186178">Японский язык</option>
+															</select>
+														</div>
+														<div class="lk-profile-direction-bind__link">
+															<a href="" data-add-button>Добавить</a>
+														</div>
+														<div class="active-fliters__list" data-active-filters="1"></div>
+													</div>
+												</div>
+											</div>
+											<div class="lk-profile__add-btn align-right">
+												<div class="grid-spaceBetween-middle-noGutter">
+													<a href="" data-cancel-button>Отменить</a>
+													<a class="btn btn--big btn--bordered" href="#" data-confirm-add>Добавить</a>
+												</div>
+											</div>
+										</div>
+									</div>
+									<script>
+						                var formUrl = '/upload/';
+						                $(document).ready(function () {
+						                    uploadHandler(formUrl);
+						                })
+						            </script>
+
+									<div class="add-element">
+										<span>
+											+
+											<a href="#">Добавить ещё</a>
+										</span>
+									</div>
+								</div>
+						        <div class="lk-profile__certifs">
+						        	<div class="lk-profile-certifs">
+						        		<div class="lk-profile-certifs__head">Другие дипломы и сертификаты / Примеры работ</div>
+						        		<div class="lk-profile-certifs__item lk-profile-certifs__item--add">
+						        			<input type="file" class="certif-file form-control" name="CERTIF_FILES" value="" data-emulate="false">
 						        		</div>
 						        	</div>
 						        </div>
-		        				<!-- end adding-in-progress -->
-
-							</div><!-- .lk-profile__block 6 -->
+					        </div>
+							<!-- .lk-profile__block 6 -->								
 
 							<div class="lk-profile__block lk-profile__block--add-info">
 								<div class="lk-profile__block-heading orange-color">
@@ -1779,570 +1808,926 @@
 								</div>
 							</div><!-- .lk-profile__block 7 -->
 
-							<div class="lk-profile__block lk-profile__block--adding">
-								<div class="lk-profile__block-heading orange-color">
-									<h4>
-										Добавление предметов
-										<span class="required">*</span>
-									</h4>
-								</div>
-								<div data-select-blocks="" class="adding-in-progress">
-									<div data-select-blocks-filters="">
-										<div class="lk-profile-adding-list">
-											<div class="lk-profile-adding-list__head">Добавленные</div>
-											<div class="active-fliters__list active-fliters__list--wide"></div>
-										</div>
-									</div>
-									<div class="lk-inputs-block active">
-										<div>
-											<input type="hidden" name="SUBJECT_LEVEL[ID][]" value="">							
+						    <div class="lk-profile__block lk-profile__block--adding">
+						    	<div class="lk-profile__block-heading orange-color">
+						    		<h4>
+						    			Добавление предметов
+						    			<span class="required">*</span>
+						    		</h4>
+						    	</div>
+						    	<div data-select-blocks>
+						    		<div data-select-blocks-filters>
+						    			<div class="lk-profile-adding-list">
+						    				<div class="lk-profile-adding-list__head">Добавленные</div>
+						    				<div class="active-fliters__list active-fliters__list--wide"></div>
+						    			</div>
+						    		</div>
+						    		<div data-select-blocks-list data-js-expr-list="{'0':[{'ID':'191790','NAME':'Музыкант известной группы','SPEC':['387']},{'ID':'191791','NAME':'Музыкант неизвестной группы','SPEC':['387']},{'ID':'191072','NAME':'Начинающий специалист (опыт до 1 года)','SPEC':['385','386','387','388','389','390','508','510','511']},{'ID':'191071','NAME':'Небольшой опыт (опыт 2-5 лет)','SPEC':['385','386','387','388','389','390','508','511']},{'ID':'191075','NAME':'Носитель языка','SPEC':['386']},{'ID':'191073','NAME':'Опытный специалист (опыт 5-10 лет)','SPEC':['385','386','387','388','389','390','508','510','511']},{'ID':'191074','NAME':'Профессионал (опыт более10 лет)','SPEC':['385','386','387','388','389','390','508','510','511']},{'ID':'191789','NAME':'Самоучка','SPEC':['387','510']}],'387':[{'ID':'191790','NAME':'Музыкант известной группы','SPEC':['387']},{'ID':'191791','NAME':'Музыкант неизвестной группы','SPEC':['387']},{'ID':'191072','NAME':'Начинающий специалист (опыт до 1 года)','SPEC':['385','386','387','388','389','390','508','510','511']},{'ID':'191071','NAME':'Небольшой опыт (опыт 2-5 лет)','SPEC':['385','386','387','388','389','390','508','511']},{'ID':'191073','NAME':'Опытный специалист (опыт 5-10 лет)','SPEC':['385','386','387','388','389','390','508','510','511']},{'ID':'191074','NAME':'Профессионал (опыт более10 лет)','SPEC':['385','386','387','388','389','390','508','510','511']},{'ID':'191789','NAME':'Самоучка','SPEC':['387','510']}],'385':[{'ID':'191072','NAME':'Начинающий специалист (опыт до 1 года)','SPEC':['385','386','387','388','389','390','508','510','511']},{'ID':'191071','NAME':'Небольшой опыт (опыт 2-5 лет)','SPEC':['385','386','387','388','389','390','508','511']},{'ID':'191073','NAME':'Опытный специалист (опыт 5-10 лет)','SPEC':['385','386','387','388','389','390','508','510','511']},{'ID':'191074','NAME':'Профессионал (опыт более10 лет)','SPEC':['385','386','387','388','389','390','508','510','511']}],'386':[{'ID':'191072','NAME':'Начинающий специалист (опыт до 1 года)','SPEC':['385','386','387','388','389','390','508','510','511']},{'ID':'191071','NAME':'Небольшой опыт (опыт 2-5 лет)','SPEC':['385','386','387','388','389','390','508','511']},{'ID':'191075','NAME':'Носитель языка','SPEC':['386']},{'ID':'191073','NAME':'Опытный специалист (опыт 5-10 лет)','SPEC':['385','386','387','388','389','390','508','510','511']},{'ID':'191074','NAME':'Профессионал (опыт более10 лет)','SPEC':['385','386','387','388','389','390','508','510','511']}],'388':[{'ID':'191072','NAME':'Начинающий специалист (опыт до 1 года)','SPEC':['385','386','387','388','389','390','508','510','511']},{'ID':'191071','NAME':'Небольшой опыт (опыт 2-5 лет)','SPEC':['385','386','387','388','389','390','508','511']},{'ID':'191073','NAME':'Опытный специалист (опыт 5-10 лет)','SPEC':['385','386','387','388','389','390','508','510','511']},{'ID':'191074','NAME':'Профессионал (опыт более10 лет)','SPEC':['385','386','387','388','389','390','508','510','511']}],'389':[{'ID':'191072','NAME':'Начинающий специалист (опыт до 1 года)','SPEC':['385','386','387','388','389','390','508','510','511']},{'ID':'191071','NAME':'Небольшой опыт (опыт 2-5 лет)','SPEC':['385','386','387','388','389','390','508','511']},{'ID':'191073','NAME':'Опытный специалист (опыт 5-10 лет)','SPEC':['385','386','387','388','389','390','508','510','511']},{'ID':'191074','NAME':'Профессионал (опыт более10 лет)','SPEC':['385','386','387','388','389','390','508','510','511']}],'390':[{'ID':'191072','NAME':'Начинающий специалист (опыт до 1 года)','SPEC':['385','386','387','388','389','390','508','510','511']},{'ID':'191071','NAME':'Небольшой опыт (опыт 2-5 лет)','SPEC':['385','386','387','388','389','390','508','511']},{'ID':'191073','NAME':'Опытный специалист (опыт 5-10 лет)','SPEC':['385','386','387','388','389','390','508','510','511']},{'ID':'191074','NAME':'Профессионал (опыт более10 лет)','SPEC':['385','386','387','388','389','390','508','510','511']}],'508':[{'ID':'191072','NAME':'Начинающий специалист (опыт до 1 года)','SPEC':['385','386','387','388','389','390','508','510','511']},{'ID':'191071','NAME':'Небольшой опыт (опыт 2-5 лет)','SPEC':['385','386','387','388','389','390','508','511']},{'ID':'191073','NAME':'Опытный специалист (опыт 5-10 лет)','SPEC':['385','386','387','388','389','390','508','510','511']},{'ID':'191074','NAME':'Профессионал (опыт более10 лет)','SPEC':['385','386','387','388','389','390','508','510','511']}],'510':[{'ID':'191072','NAME':'Начинающий специалист (опыт до 1 года)','SPEC':['385','386','387','388','389','390','508','510','511']},{'ID':'191073','NAME':'Опытный специалист (опыт 5-10 лет)','SPEC':['385','386','387','388','389','390','508','510','511']},{'ID':'191074','NAME':'Профессионал (опыт более10 лет)','SPEC':['385','386','387','388','389','390','508','510','511']},{'ID':'191789','NAME':'Самоучка','SPEC':['387','510']}],'511':[{'ID':'191072','NAME':'Начинающий специалист (опыт до 1 года)','SPEC':['385','386','387','388','389','390','508','510','511']},{'ID':'191071','NAME':'Небольшой опыт (опыт 2-5 лет)','SPEC':['385','386','387','388','389','390','508','511']},{'ID':'191073','NAME':'Опытный специалист (опыт 5-10 лет)','SPEC':['385','386','387','388','389','390','508','510','511']},{'ID':'191074','NAME':'Профессионал (опыт более10 лет)','SPEC':['385','386','387','388','389','390','508','510','511']}]}">
 
-											<div class="lk-inputs-block__item">
-												<div class="grid-spaceBetween">
-													<div class="col-6">
-														<div class="input-block">
-															<label> <b>Быстрый поиск предмета</b>
-															</label>
-															<select data-formstyler="false" name="SUBJECT_LEVEL[SUBJECT_ID][]" >
-																<option value="">Выберите значение</option>
-																<option data-spec-id="385" value="186169">Биология</option>
-																<option data-spec-id="386" value="186176">Английский язык</option>
-																<option data-spec-id="388" value="1060538">Джиу-джитсу</option>
-																<option data-spec-id="511" value="878459">Инвестиционное проектирование</option>
-																<option data-spec-id="510" value="503207">1С</option>
-																<option data-spec-id="510" value="256300">3D Моделирование и Графика</option>
-																<option data-spec-id="510" value="711607">SEO оптимизация</option>
-																<option data-spec-id="510" value="257033">Web-дизайн</option>
-																<option data-spec-id="389" value="186242">Автоинструкторы</option>
-																<option data-spec-id="389" value="190323">Автоинструкторы (АКПП)</option>
-																<option data-spec-id="510" value="503208">Администрирование Linux</option>
-																<option data-spec-id="386" value="186200">Азербайджанский язык</option>
-																<option data-spec-id="388" value="186229">Айкидо</option>
-																<option data-spec-id="388" value="613868">Академическая гребля</option>
-																<option data-spec-id="388" value="186222">Аквааэробика</option>
-																<option data-spec-id="387" value="414197">Аккордеон</option>
-																<option data-spec-id="388" value="855116">Акробатика</option>
-																<option data-spec-id="390" value="252672">Актёрское мастерство</option>
-																<option data-spec-id="386" value="905367">Албанский язык</option>
-																<option data-spec-id="385" value="185014">Алгебра</option>
-																<option data-spec-id="388" value="186223">Альпинизм</option>
-																<option data-spec-id="511" value="893228">Аналитическая геометрия</option>
-																<option data-spec-id="511" value="805936">Анатомия</option>
-																<option data-spec-id="390" value="227260">Аниматоры</option>
-																<option data-spec-id="390" value="811257">Анимационная живопись</option>
-																<option data-spec-id="386" value="186188">Арабский язык</option>
-																<option data-spec-id="386" value="607155">Армянский язык</option>
-																<option data-spec-id="387" value="314727">Арфа</option>
-																<option data-spec-id="511" value="772266">Архитектурная графика</option>
-																<option data-spec-id="511" value="965120">Архитектурное макетирование</option>
-																<option data-spec-id="511" value="482246">Астрономия</option>
-																<option data-spec-id="511" value="418667">Аудит</option>
-																<option data-spec-id="388" value="186237">Аэробика</option>
-																<option data-spec-id="390" value="1033746">Аэродинамика летательного аппарата</option>
-																<option data-spec-id="388" value="218949">Бадминтон</option>
-																<option data-spec-id="387" value="893929">Балалайка</option>
-																<option data-spec-id="388" value="728925">Бальные танцы</option>
-																<option data-spec-id="511" value="418670">Банковское Дело</option>
-																<option data-spec-id="390" value="963690">Барное дело</option>
-																<option data-spec-id="388" value="420349">Баскетбол</option>
-																<option data-spec-id="387" value="189256">Баян</option>
-																<option data-spec-id="388" value="698614">Бег</option>
-																<option data-spec-id="388" value="386764">Бильярд</option>
-																<option data-spec-id="387" value="866136">Блокфлейта</option>
-																<option data-spec-id="388" value="186212">Бодибилдинг</option>
-																<option data-spec-id="388" value="186232">Бокс</option>
-																<option data-spec-id="386" value="224526">Болгарский язык</option>
-																<option data-spec-id="388" value="712061">Брейк данс</option>
-																<option data-spec-id="390" value="189259">Бухгалтерия</option>
-																<option data-spec-id="511" value="841594">Бухгалтерский учет (ВУЗ)</option>
-																<option data-spec-id="388" value="186211">Велоспорт</option>
-																<option data-spec-id="386" value="216328">Венгерский язык</option>
-																<option data-spec-id="510" value="257034">Верстка</option>
-																<option data-spec-id="390" value="284842">Видео монтаж</option>
-																<option data-spec-id="388" value="811220">Вин-чунь</option>
-																<option data-spec-id="387" value="314738">Виолончель</option>
-																<option data-spec-id="511" value="909169">Водоснабжение</option>
-																<option data-spec-id="387" value="186247">Вокал</option>
-																<option data-spec-id="388" value="186215">Волейбол</option>
-																<option data-spec-id="388" value="186227">Вольная борьба</option>
-																<option data-spec-id="388" value="728945">Восточные танцы</option>
-																<option data-spec-id="511" value="257050">Высшая математика</option>
-																<option data-spec-id="386" value="270021">Вьетнамский язык</option>
-																<option data-spec-id="388" value="186210">Гандбол</option>
-																<option data-spec-id="385" value="186173">География</option>
-																<option data-spec-id="511" value="861611">Геодезия</option>
-																<option data-spec-id="385" value="185015">Геометрия</option>
-																<option data-spec-id="511" value="909170">Гидравлика</option>
-																<option data-spec-id="388" value="186208">Гимнастика</option>
-																<option data-spec-id="387" value="186245">Гитара</option>
-																<option data-spec-id="386" value="186202">Голландский язык</option>
-																<option data-spec-id="388" value="186239">Гольф</option>
-																<option data-spec-id="388" value="186238">Горные лыжи</option>
-																<option data-spec-id="388" value="186228">Греко-римская борьба</option>
-																<option data-spec-id="388" value="811221">Грепплинг</option>
-																<option data-spec-id="386" value="186199">Греческий язык</option>
-																<option data-spec-id="386" value="186187">Грузинский язык</option>
-																<option data-spec-id="388" value="284674">Дайвинг</option>
-																<option data-spec-id="386" value="397825">Датский язык</option>
-																<option data-spec-id="390" value="772157">Декор</option>
-																<option data-spec-id="511" value="764655">Детали машин</option>
-																<option data-spec-id="508" value="335222">Дефектология</option>
-																<option data-spec-id="388" value="186235">Дзюдо</option>
-																<option data-spec-id="387" value="480236">Диджеинг</option>
-																<option data-spec-id="511" value="772156">Дизайн (ВУЗ)</option>
-																<option data-spec-id="390" value="772183">Дизайн (проект)</option>
-																<option data-spec-id="387" value="1022462">Дирижирование</option>
-																<option data-spec-id="387" value="770062">Домра</option>
-																<option data-spec-id="387" value="186250">Духовые инструменты</option>
-																<option data-spec-id="388" value="190066">Единоборства</option>
-																<option data-spec-id="385" value="950040">Естествознание</option>
-																<option data-spec-id="390" value="772161">Живопись</option>
-																<option data-spec-id="390" value="863010">Журналистика</option>
-																<option data-spec-id="386" value="186193">Иврит</option>
-																<option data-spec-id="386" value="904871">Индонезийский язык</option>
-																<option data-spec-id="511" value="257053">Инженерная графика</option>
-																<option data-spec-id="388" value="861849">Инструктор тренажерного зала</option>
-																<option data-spec-id="390" value="905095">Интернет-маркетинг</option>
-																<option data-spec-id="385" value="186171">Информатика</option>
-																<option data-spec-id="386" value="898868">Ирландский язык</option>
-																<option data-spec-id="390" value="302465">Искусство Бонсай</option>
-																<option data-spec-id="386" value="186182">Испанский язык</option>
-																<option data-spec-id="385" value="186170">История</option>
-																<option data-spec-id="511" value="422323">История Искусств</option>
-																<option data-spec-id="386" value="186181">Итальянский язык</option>
-																<option data-spec-id="388" value="186226">Йога</option>
-																<option data-spec-id="386" value="186201">Казахский язык</option>
-																<option data-spec-id="388" value="278088">Кайтинг</option>
-																<option data-spec-id="388" value="341743">Капоэйра</option>
-																<option data-spec-id="388" value="186231">Карате</option>
-																<option data-spec-id="390" value="854047">Карвинг</option>
-																<option data-spec-id="388" value="401648">Каякинг</option>
-																<option data-spec-id="390" value="883619">Керамика</option>
-																<option data-spec-id="388" value="186234">Кикбоксинг</option>
-																<option data-spec-id="390" value="189261">Кинологи</option>
-																<option data-spec-id="386" value="186179">Китайский язык</option>
-																<option data-spec-id="388" value="186207">Конный спорт</option>
-																<option data-spec-id="387" value="964104">Контрабас</option>
-																<option data-spec-id="388" value="186205">Коньки</option>
-																<option data-spec-id="390" value="711605">Копирайтинг</option>
-																<option data-spec-id="386" value="186183">Корейский язык</option>
-																<option data-spec-id="508" value="243730">Коучи (Психотренеры)</option>
-																<option data-spec-id="388" value="710377">Крикет</option>
-																<option data-spec-id="388" value="841595">Крокет</option>
-																<option data-spec-id="390" value="946994">Кубик Рубика</option>
-																<option data-spec-id="390" value="241859">Кулинарное искусство</option>
-																<option data-spec-id="511" value="803592">Культурология</option>
-																<option data-spec-id="511" value="772165">Ландшафтная графика</option>
-																<option data-spec-id="390" value="815425">Ландшафтный дизайн</option>
-																<option data-spec-id="386" value="186198">Латинский язык</option>
-																<option data-spec-id="386" value="873323">Латышский язык</option>
-																<option data-spec-id="388" value="935381">Легкая атлетика</option>
-																<option data-spec-id="511" value="934788">Линейная алгебра</option>
-																<option data-spec-id="385" value="185017">Литература</option>
-																<option data-spec-id="390" value="493830">Литературное мастерство</option>
-																<option data-spec-id="386" value="1033760">Литовский язык</option>
-																<option data-spec-id="511" value="947064">Логистика</option>
-																<option data-spec-id="390" value="774177">Логопед-дефектолог</option>
-																<option data-spec-id="390" value="210580">Логопеды</option>
-																<option data-spec-id="388" value="186225">ЛФК</option>
-																<option data-spec-id="388" value="240609">Лыжи (беговые)</option>
-																<option data-spec-id="511" value="257055">Макроэкономика</option>
-																<option data-spec-id="511" value="803781">Маркетинг</option>
-																<option data-spec-id="385" value="186175">Математика</option>
-																<option data-spec-id="511" value="893226">Математический анализ</option>
-																<option data-spec-id="511" value="866511">Материаловедение</option>
-																<option data-spec-id="511" value="803912">Машиностроение</option>
-																<option data-spec-id="511" value="879035">Медицинская биохимия</option>
-																<option data-spec-id="511" value="525333">Менеджмент</option>
-																<option data-spec-id="511" value="851804">Микробиология</option>
-																<option data-spec-id="511" value="257054">Микроэкономика</option>
-																<option data-spec-id="385" value="859113">Мировая художественная культура (МХК)</option>
-																<option data-spec-id="390" value="772182">Моделирование</option>
-																<option data-spec-id="390" value="616289">Мозаика</option>
-																<option data-spec-id="386" value="764699">Монгольский язык</option>
-																<option data-spec-id="389" value="186241">Мотоинструкторы</option>
-																<option data-spec-id="387" value="191517">Музыкальное развитие</option>
-																<option data-spec-id="511" value="1033749">Навигация</option>
-																<option data-spec-id="388" value="728930">Народные танцы</option>
-																<option data-spec-id="388" value="191076">Настольный теннис</option>
-																<option data-spec-id="390" value="873332">Настройка  видео-техники</option>
-																<option data-spec-id="385" value="351635">Начальные классы</option>
-																<option data-spec-id="511" value="257052">Начертательная геометрия</option>
-																<option data-spec-id="386" value="186177">Немецкий язык</option>
-																<option data-spec-id="386" value="332983">Нидерландский язык</option>
-																<option data-spec-id="386" value="186186">Норвежский язык</option>
-																<option data-spec-id="390" value="844194">Няни и гувернеры</option>
-																<option data-spec-id="385" value="848824">ОБЖ</option>
-																<option data-spec-id="385" value="186168">Обществознание</option>
-																<option data-spec-id="390" value="284843">Операторское искусство</option>
-																<option data-spec-id="390" value="776386">Ораторское искусство</option>
-																<option data-spec-id="387" value="859340">Орган</option>
-																<option data-spec-id="511" value="866360">Организация движения транспорта</option>
-																<option data-spec-id="385" value="1014861">Основы экономики (школа)</option>
-																<option data-spec-id="390" value="864883">Основы ювелирного искусства</option>
-																<option data-spec-id="388" value="292533">Парапланеризм</option>
-																<option data-spec-id="388" value="866433">Паркур</option>
-																<option data-spec-id="388" value="811214">Пауэрлифтинг</option>
-																<option data-spec-id="386" value="860151">Персидский язык</option>
-																<option data-spec-id="388" value="903827">Пилатес</option>
-																<option data-spec-id="388" value="186240">Плавание</option>
-																<option data-spec-id="390" value="189260">Подготовка к школе</option>
-																<option data-spec-id="388" value="271628">Покер</option>
-																<option data-spec-id="511" value="1014217">Политология</option>
-																<option data-spec-id="386" value="186196">Польский язык</option>
-																<option data-spec-id="386" value="186194">Португальский язык</option>
-																<option data-spec-id="511" value="261224">Право (ВУЗ)</option>
-																<option data-spec-id="385" value="1014862">Правоведение</option>
-																<option data-spec-id="510" value="257031">Программирование</option>
-																<option data-spec-id="390" value="189258">Программирование разное</option>
-																<option data-spec-id="510" value="802566">Проектирование в IT</option>
-																<option data-spec-id="511" value="866356">Производственное планирование</option>
-																<option data-spec-id="388" value="401649">Прыжки в воду</option>
-																<option data-spec-id="508" value="243729">Психологи-Консультанты</option>
-																<option data-spec-id="508" value="243731">Психологические курсы и тренинги</option>
-																<option data-spec-id="511" value="216334">Психология (ВУЗ)</option>
-																<option data-spec-id="508" value="243732">Психотерапевты</option>
-																<option data-spec-id="511" value="805295">Радиоэлектроника</option>
-																<option data-spec-id="390" value="836319">Раннее развитие</option>
-																<option data-spec-id="388" value="1029699">Рафтинг</option>
-																<option data-spec-id="390" value="774178">Резьба по дереву</option>
-																<option data-spec-id="390" value="189257">Рисование</option>
-																<option data-spec-id="390" value="613857">Риторика</option>
-																<option data-spec-id="390" value="334300">Робототехника</option>
-																<option data-spec-id="388" value="186209">Роликовые коньки</option>
-																<option data-spec-id="390" value="414195">Рукоделие</option>
-																<option data-spec-id="388" value="802737">Рукопашный бой</option>
-																<option data-spec-id="386" value="190512">Румынский язык</option>
-																<option data-spec-id="386" value="226936">Русский как Иностранный</option>
-																<option data-spec-id="385" value="185016">Русский язык</option>
-																<option data-spec-id="387" value="726953">Саксофон</option>
-																<option data-spec-id="388" value="852993">Самбо</option>
-																<option data-spec-id="388" value="866531">Самооборона</option>
-																<option data-spec-id="386" value="1031957">Санскрит</option>
-																<option data-spec-id="386" value="186197">Сербский язык</option>
-																<option data-spec-id="388" value="278089">Серфинг</option>
-																<option data-spec-id="387" value="766012">Синтезатор</option>
-																<option data-spec-id="511" value="841824">Системная аналитика</option>
-																<option data-spec-id="388" value="487163">Скалолазание</option>
-																<option data-spec-id="388" value="248725">Сквош</option>
-																<option data-spec-id="388" value="388652">Скейтборд</option>
-																<option data-spec-id="390" value="467005">Скорочтение</option>
-																<option data-spec-id="387" value="186244">Скрипка</option>
-																<option data-spec-id="390" value="861635">Скульптура</option>
-																<option data-spec-id="386" value="1021460">Словацкий язык</option>
-																<option data-spec-id="386" value="699883">Словенский язык</option>
-																<option data-spec-id="511" value="291627">Сметное дело</option>
-																<option data-spec-id="388" value="186219">Сноуборд</option>
-																<option data-spec-id="388" value="728929">Современные танцы</option>
-																<option data-spec-id="510" value="941758">Создание приложений</option>
-																<option data-spec-id="387" value="186246">Сольфеджио</option>
-																<option data-spec-id="390" value="963945">Сомелье</option>
-																<option data-spec-id="511" value="764651">Сопротивление материалов</option>
-																<option data-spec-id="508" value="803682">Социальные педагоги</option>
-																<option data-spec-id="511" value="803899">Социология</option>
-																<option data-spec-id="388" value="698837">Спортивная ходьба</option>
-																<option data-spec-id="511" value="408269">Статистика</option>
-																<option data-spec-id="511" value="432808">Стилистика русского языка</option>
-																<option data-spec-id="390" value="493831">Стихосложение</option>
-																<option data-spec-id="388" value="186220">Стрельба</option>
-																<option data-spec-id="388" value="712039">Стретчинг</option>
-																<option data-spec-id="511" value="861624">Строительство</option>
-																<option data-spec-id="390" value="915695">Сурдоперевод</option>
-																<option data-spec-id="390" value="252673">Сценическая речь</option>
-																<option data-spec-id="388" value="186236">Тайский бокс</option>
-																<option data-spec-id="386" value="211345">Тайский язык</option>
-																<option data-spec-id="388" value="186218">Танцы</option>
-																<option data-spec-id="386" value="186195">Татарский язык</option>
-																<option data-spec-id="388" value="186217">Теннис</option>
-																<option data-spec-id="511" value="284840">Теоретическая механика</option>
-																<option data-spec-id="511" value="711836">Теория вероятности</option>
-																<option data-spec-id="511" value="1060522">Теория информации</option>
-																<option data-spec-id="511" value="764652">Теория механизмов и машин</option>
-																<option data-spec-id="390" value="682450">Теория первой медицинской помощи</option>
-																<option data-spec-id="511" value="929732">Теплогазоснабжение и вентиляция</option>
-																<option data-spec-id="386" value="430494">Тибетский язык</option>
-																<option data-spec-id="511" value="1020051">Товароведение</option>
-																<option data-spec-id="388" value="1031262">Триатлон</option>
-																<option data-spec-id="386" value="186184">Турецкий язык</option>
-																<option data-spec-id="386" value="909166">Туркменский язык</option>
-																<option data-spec-id="388" value="802738">Тхэквандо</option>
-																<option data-spec-id="388" value="771013">Тяжелая атлетика</option>
-																<option data-spec-id="387" value="186249">Ударные инструменты</option>
-																<option data-spec-id="386" value="186185">Украинский язык</option>
-																<option data-spec-id="387" value="858742">Укулеле</option>
-																<option data-spec-id="511" value="1062192">Управление персоналом</option>
-																<option data-spec-id="386" value="860777">Урду</option>
-																<option data-spec-id="388" value="186233">Ушу</option>
-																<option data-spec-id="388" value="186206">Фехтование</option>
-																<option data-spec-id="388" value="186203">Фигурное катание</option>
-																<option data-spec-id="385" value="186174">Физика</option>
-																<option data-spec-id="511" value="257051">Физика (ВУЗ)</option>
-																<option data-spec-id="511" value="866517">Физиология</option>
-																<option data-spec-id="388" value="186224">Физкультура</option>
-																<option data-spec-id="511" value="239733">Философия</option>
-																<option data-spec-id="386" value="186191">Финский язык</option>
-																<option data-spec-id="388" value="186216">Фитнес</option>
-																<option data-spec-id="387" value="496686">Флейта</option>
-																<option data-spec-id="390" value="859443">Флористика</option>
-																<option data-spec-id="387" value="186243">Фортепиано</option>
-																<option data-spec-id="390" value="227014">Фотография</option>
-																<option data-spec-id="386" value="186180">Французский язык</option>
-																<option data-spec-id="388" value="186213">Футбол</option>
-																<option data-spec-id="385" value="186172">Химия</option>
-																<option data-spec-id="511" value="702273">Химия (ВУЗ)</option>
-																<option data-spec-id="386" value="860732">Хинди</option>
-																<option data-spec-id="388" value="186221">Ходьба</option>
-																<option data-spec-id="388" value="186214">Хоккей</option>
-																<option data-spec-id="386" value="235375">Хорватский язык</option>
-																<option data-spec-id="388" value="712054">Хореография</option>
-																<option data-spec-id="387" value="935542">Хэнг драм</option>
-																<option data-spec-id="388" value="186230">Цигун</option>
-																<option data-spec-id="390" value="260428">Цирковые искусства</option>
-																<option data-spec-id="385" value="354520">Черчение</option>
-																<option data-spec-id="386" value="1031347">Чеченский язык</option>
-																<option data-spec-id="386" value="186189">Чешский язык</option>
-																<option data-spec-id="388" value="186204">Шахматы</option>
-																<option data-spec-id="386" value="186190">Шведский язык</option>
-																<option data-spec-id="390" value="481604">Швейное мастерство</option>
-																<option data-spec-id="388" value="811011">Шестовая акробатика</option>
-																<option data-spec-id="385" value="440600">Экология</option>
-																<option data-spec-id="511" value="257056">Эконометрика</option>
-																<option data-spec-id="389" value="191078">Экстремальное вождение</option>
-																<option data-spec-id="387" value="186248">Электрогитара</option>
-																<option data-spec-id="511" value="940516">Электротехника</option>
-																<option data-spec-id="386" value="186192">Эстонский язык</option>
-																<option data-spec-id="511" value="261220">Юриспруденция</option>
-																<option data-spec-id="386" value="186178">Японский язык</option>
-															</select>
-														</div>
-													</div>
-													<div class="col-6">
-														<div class="input-block">
-															<label>Квалификация</label>
-															<select data-formstyler="false" data-js-expr="" name="SUBJECT_LEVEL[EXPR_ID][]">
-																<option value="">Выберите значение</option>
-																<option value="191790">Музыкант известной группы</option>
-																<option value="191791">Музыкант неизвестной группы</option>
-																<option value="191072">Начинающий специалист (опыт до 1 года)</option>
-																<option value="191071">Небольшой опыт (опыт 2-5 лет)</option>
-																<option value="191075">Носитель языка</option>
-																<option value="191073">Опытный специалист (опыт 5-10 лет)</option>
-																<option value="191074">Профессионал (опыт более10 лет)</option>
-																<option value="191789">Самоучка</option>
-															</select>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="lk-inputs-block__item lk-inputs-block__item--sum">
-												<div class="lk-profile-adding-list__head"></div>
-												<div class="js-multi-field-wrapper">
-													<div class="js-multi-fields">
-														<div class="js-multi-field">
-															<div class="grid-bottom">
-																<div class="col-2">
-																	<div class="input-block">
-																		<label>Цена</label>
-																		<input name="SUBJECT_LEVEL[HOLDING][0][PRICE][0]" type="text" value=""></div>
-																</div>
-																<div class="col-2">
-																	<div class="input-block">
-																		<label for="">За (минут)</label>
-																		<select name="SUBJECT_LEVEL[HOLDING][0][TIME][0]" data-formstyler="false">
-																			<option value="60">60</option>
-																			<option value="90">90</option>
-																			<option value="120">120</option>
-																		</select>
-																	</div>
-																</div>
-																<div class="col">
-																	<div class="input-block">
-																		<div class="input-checkbox">
-																			<input id="SUBJECT_LEVEL[HOLDING][0][UF_TYPE][0][]" type="checkbox" value="907553">							
-																			<label for="SUBJECT_LEVEL[HOLDING][0][UF_TYPE][0][]">
-																				<span>Дистанционно</span>
-																			</label>
-																		</div>
-																	</div>
-																</div>
-																<div class="col">
-																	<div class="input-block">
-																		<div class="input-checkbox">
-																			<input id="SUBJECT_LEVEL[HOLDING][0][UF_TYPE][1][]" type="checkbox" value="907554">							
-																			<label for="SUBJECT_LEVEL[HOLDING][0][UF_TYPE][1][]">
-																				<span>Группа</span>
-																			</label>
-																		</div>
-																	</div>
-																</div>
-																<div class="col">
-																	<div class="input-block">
-																		<div class="input-checkbox">
-																			<input id="SUBJECT_LEVEL[HOLDING][0][UF_TYPE][2][]" type="checkbox" value="907555">							
-																			<label for="SUBJECT_LEVEL[HOLDING][0][UF_TYPE][2][]">
-																				<span>У ученика</span>
-																			</label>
-																		</div>
-																	</div>
-																</div>
-																<div class="col">
-																	<div class="input-block">
-																		<div class="input-checkbox">
-																			<input id="SUBJECT_LEVEL[HOLDING][0][UF_TYPE][3][]" type="checkbox" value="907556">							
-																			<label for="SUBJECT_LEVEL[HOLDING][0][UF_TYPE][3][]">
-																				<span>У преподавателя</span>
-																			</label>
-																		</div>
-																	</div>
-																</div>
-															</div>
-															<span class="js-remove-field hidden">
-																<a href="#">Удалить</a>
-															</span>
-														</div>
-													</div>
-													<span class="js-add-field add-element">
-														+
-														<a href="#">Добавить ещё цену</a>
-													</span>
+						    			<div data-select-blocks-item class="lk-inputs-block" data-tabs-clone>
+						    				<input type="hidden" name="SUBJECT_LEVEL[ID][]" value=""/>		    
 
-												</div>
-											</div>
-											<div class="lk-inputs-block__item">
-												<div class="lk-profile-adding-list__head">Категория ученика</div>
-												<div class="grid">
-													<div class="col-3">
-														<div class="input-block">
-															<div class="input-checkbox">
-																<input type="checkbox" id="SUBJECT_LEVEL[UF_CATEGORY][0][]" value="190501">							
-																<label for="SUBJECT_LEVEL[UF_CATEGORY][0][]">
-																	<span>Дошкольник</span>
-																</label>
-															</div>
-														</div>
-													</div>
-													<div class="col-3">
-														<div class="input-block">
-															<div class="input-checkbox">
-																<input type="checkbox" id="SUBJECT_LEVEL[UF_CATEGORY][1][]" value="185029">							
-																<label for="SUBJECT_LEVEL[UF_CATEGORY][1][]">
-																	<span>1-3 класс</span>
-																</label>
-															</div>
-														</div>
-													</div>
-													<div class="col-3">
-														<div class="input-block">
-															<div class="input-checkbox">
-																<input type="checkbox" id="SUBJECT_LEVEL[UF_CATEGORY][2][]" value="185030">							
-																<label for="SUBJECT_LEVEL[UF_CATEGORY][2][]">
-																	<span>4-5 класс</span>
-																</label>
-															</div>
-														</div>
-													</div>
-													<div class="col-3">
-														<div class="input-block">
-															<div class="input-checkbox">
-																<input type="checkbox" id="SUBJECT_LEVEL[UF_CATEGORY][3][]" value="185031">							
-																<label for="SUBJECT_LEVEL[UF_CATEGORY][3][]">
-																	<span>6-7 класс</span>
-																</label>
-															</div>
-														</div>
-													</div>
-													<div class="col-3">
-														<div class="input-block">
-															<div class="input-checkbox">
-																<input type="checkbox" id="SUBJECT_LEVEL[UF_CATEGORY][4][]" value="185032">							
-																<label for="SUBJECT_LEVEL[UF_CATEGORY][4][]">
-																	<span>8-9 класс</span>
-																</label>
-															</div>
-														</div>
-													</div>
-													<div class="col-3">
-														<div class="input-block">
-															<div class="input-checkbox">
-																<input type="checkbox" id="SUBJECT_LEVEL[UF_CATEGORY][5][]" value="185033">							
-																<label for="SUBJECT_LEVEL[UF_CATEGORY][5][]">
-																	<span>10-11 класс</span>
-																</label>
-															</div>
-														</div>
-													</div>
-													<div class="col-3">
-														<div class="input-block">
-															<div class="input-checkbox">
-																<input type="checkbox" id="SUBJECT_LEVEL[UF_CATEGORY][5][]" value="185034">							
-																<label for="SUBJECT_LEVEL[UF_CATEGORY][5][]">
-																	<span>ЕГЭ</span>
-																</label>
-															</div>
-														</div>
-													</div>
-													<div class="col-3">
-														<div class="input-block">
-															<div class="input-checkbox">
-																<input type="checkbox" id="SUBJECT_LEVEL[UF_CATEGORY][7][]" value="910807">							
-																<label for="SUBJECT_LEVEL[UF_CATEGORY][7][]">
-																	<span>ОГЭ</span>
-																</label>
-															</div>
-														</div>
-													</div>
-													<div class="col-3">
-														<div class="input-block">
-															<div class="input-checkbox">
-																<input type="checkbox" id="SUBJECT_LEVEL[UF_CATEGORY][8][]" value="190502">							
-																<label for="SUBJECT_LEVEL[UF_CATEGORY][8][]">
-																	<span>Студент</span>
-																</label>
-															</div>
-														</div>
-													</div>
-													<div class="col-3">
-														<div class="input-block">
-															<div class="input-checkbox">
-																<input type="checkbox" id="SUBJECT_LEVEL[UF_CATEGORY][9][]" value="190505">							
-																<label for="SUBJECT_LEVEL[UF_CATEGORY][9][]">
-																	<span>Другая</span>
-																</label>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="lk-inputs-block__item">
-												<div class="lk-profile-adding-list__head">Специализация</div>
-												<div class="lk-profile-specialization">
-													<div class="lk-profile-specialization__left">
-														<div class="input-block">
-															<textarea name="SUBJECT_LEVEL[SPEC_TEXT][]" cols="30" rows="5"></textarea>
-														</div>
-													</div>
-													<div class="lk-profile-specialization__right">
-														Введите описание программ, направления в работе или специфику вашего курса.
-														<br>							
-														<br>До 200 символов</div>
-												</div>
-											</div>
-											<div class="lk-profile__add-btn align-right">
-												<div class="grid-spaceBetween-middle-noGutter">
-													<a href="" data-cancel-button="">Отменить</a>
-													<a class="btn btn--big btn--bordered" href="#" data-confirm-add="">Добавить</a>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="add-element" style="display: none;">
-										<span>
-											+
-											<a href="#">Добавить еще предмет</a>
-										</span>
-									</div>
-								</div>
-							</div><!-- .lk-profile__block 7 -->
+						    				<div class="lk-inputs-block__item">
+						    					<div class="grid-spaceBetween">
+						    						<div class="col-6">
+						    							<div class="input-block">
+						    								<label> <b>Быстрый поиск предмета</b>
+						    								</label>
+						    								<select data-formstyler="false" data-js-subject name="SUBJECT_LEVEL[SUBJECT_ID][]"
+											                        data-choise-select>
+						    									<option value="">Выберите значение</option>
+						    									<option  data-spec-id="385"
+						                                                     value="186169">Биология</option>
+						    									<option  data-spec-id="386"
+						                                                     value="186176">Английский язык</option>
+						    									<option  data-spec-id="388"
+						                                                     value="1060538">Джиу-джитсу</option>
+						    									<option  data-spec-id="511"
+						                                                     value="878459">Инвестиционное проектирование</option>
+						    									<option  data-spec-id="510"
+						                                                     value="503207">1С</option>
+						    									<option  data-spec-id="510"
+						                                                     value="256300">3D Моделирование и Графика</option>
+						    									<option  data-spec-id="510"
+						                                                     value="711607">SEO оптимизация</option>
+						    									<option  data-spec-id="510"
+						                                                     value="257033">Web-дизайн</option>
+						    									<option  data-spec-id="389"
+						                                                     value="186242">Автоинструкторы</option>
+						    									<option  data-spec-id="389"
+						                                                     value="190323">Автоинструкторы (АКПП)</option>
+						    									<option  data-spec-id="510"
+						                                                     value="503208">Администрирование Linux</option>
+						    									<option  data-spec-id="386"
+						                                                     value="186200">Азербайджанский язык</option>
+						    									<option  data-spec-id="388"
+						                                                     value="186229">Айкидо</option>
+						    									<option  data-spec-id="388"
+						                                                     value="613868">Академическая гребля</option>
+						    									<option  data-spec-id="388"
+						                                                     value="186222">Аквааэробика</option>
+						    									<option  data-spec-id="387"
+						                                                     value="414197">Аккордеон</option>
+						    									<option  data-spec-id="388"
+						                                                     value="855116">Акробатика</option>
+						    									<option  data-spec-id="390"
+						                                                     value="252672">Актёрское мастерство</option>
+						    									<option  data-spec-id="386"
+						                                                     value="905367">Албанский язык</option>
+						    									<option  data-spec-id="385"
+						                                                     value="185014">Алгебра</option>
+						    									<option  data-spec-id="388"
+						                                                     value="186223">Альпинизм</option>
+						    									<option  data-spec-id="511"
+						                                                     value="893228">Аналитическая геометрия</option>
+						    									<option  data-spec-id="511"
+						                                                     value="805936">Анатомия</option>
+						    									<option  data-spec-id="390"
+						                                                     value="227260">Аниматоры</option>
+						    									<option  data-spec-id="390"
+						                                                     value="811257">Анимационная живопись</option>
+						    									<option  data-spec-id="386"
+						                                                     value="186188">Арабский язык</option>
+						    									<option  data-spec-id="386"
+						                                                     value="607155">Армянский язык</option>
+						    									<option  data-spec-id="387"
+						                                                     value="314727">Арфа</option>
+						    									<option  data-spec-id="511"
+						                                                     value="772266">Архитектурная графика</option>
+						    									<option  data-spec-id="511"
+						                                                     value="965120">Архитектурное макетирование</option>
+						    									<option  data-spec-id="511"
+						                                                     value="482246">Астрономия</option>
+						    									<option  data-spec-id="511"
+						                                                     value="418667">Аудит</option>
+						    									<option  data-spec-id="388"
+						                                                     value="186237">Аэробика</option>
+						    									<option  data-spec-id="390"
+						                                                     value="1033746">Аэродинамика летательного аппарата</option>
+						    									<option  data-spec-id="388"
+						                                                     value="218949">Бадминтон</option>
+						    									<option  data-spec-id="387"
+						                                                     value="893929">Балалайка</option>
+						    									<option  data-spec-id="388"
+						                                                     value="728925">Бальные танцы</option>
+						    									<option  data-spec-id="511"
+						                                                     value="418670">Банковское Дело</option>
+						    									<option  data-spec-id="390"
+						                                                     value="963690">Барное дело</option>
+						    									<option  data-spec-id="388"
+						                                                     value="420349">Баскетбол</option>
+						    									<option  data-spec-id="387"
+						                                                     value="189256">Баян</option>
+						    									<option  data-spec-id="388"
+						                                                     value="698614">Бег</option>
+						    									<option  data-spec-id="388"
+						                                                     value="386764">Бильярд</option>
+						    									<option  data-spec-id="387"
+						                                                     value="866136">Блокфлейта</option>
+						    									<option  data-spec-id="388"
+						                                                     value="186212">Бодибилдинг</option>
+						    									<option  data-spec-id="388"
+						                                                     value="186232">Бокс</option>
+						    									<option  data-spec-id="386"
+						                                                     value="224526">Болгарский язык</option>
+						    									<option  data-spec-id="388"
+						                                                     value="712061">Брейк данс</option>
+						    									<option  data-spec-id="390"
+						                                                     value="189259">Бухгалтерия</option>
+						    									<option  data-spec-id="511"
+						                                                     value="841594">Бухгалтерский учет (ВУЗ)</option>
+						    									<option  data-spec-id="388"
+						                                                     value="186211">Велоспорт</option>
+						    									<option  data-spec-id="386"
+						                                                     value="216328">Венгерский язык</option>
+						    									<option  data-spec-id="510"
+						                                                     value="257034">Верстка</option>
+						    									<option  data-spec-id="390"
+						                                                     value="284842">Видео монтаж</option>
+						    									<option  data-spec-id="388"
+						                                                     value="811220">Вин-чунь</option>
+						    									<option  data-spec-id="387"
+						                                                     value="314738">Виолончель</option>
+						    									<option  data-spec-id="511"
+						                                                     value="909169">Водоснабжение</option>
+						    									<option  data-spec-id="387"
+						                                                     value="186247">Вокал</option>
+						    									<option  data-spec-id="388"
+						                                                     value="186215">Волейбол</option>
+						    									<option  data-spec-id="388"
+						                                                     value="186227">Вольная борьба</option>
+						    									<option  data-spec-id="388"
+						                                                     value="728945">Восточные танцы</option>
+						    									<option  data-spec-id="511"
+						                                                     value="257050">Высшая математика</option>
+						    									<option  data-spec-id="386"
+						                                                     value="270021">Вьетнамский язык</option>
+						    									<option  data-spec-id="388"
+						                                                     value="186210">Гандбол</option>
+						    									<option  data-spec-id="385"
+						                                                     value="186173">География</option>
+						    									<option  data-spec-id="511"
+						                                                     value="861611">Геодезия</option>
+						    									<option  data-spec-id="385"
+						                                                     value="185015">Геометрия</option>
+						    									<option  data-spec-id="511"
+						                                                     value="909170">Гидравлика</option>
+						    									<option  data-spec-id="388"
+						                                                     value="186208">Гимнастика</option>
+						    									<option  data-spec-id="387"
+						                                                     value="186245">Гитара</option>
+						    									<option  data-spec-id="386"
+						                                                     value="186202">Голландский язык</option>
+						    									<option  data-spec-id="388"
+						                                                     value="186239">Гольф</option>
+						    									<option  data-spec-id="388"
+						                                                     value="186238">Горные лыжи</option>
+						    									<option  data-spec-id="388"
+						                                                     value="186228">Греко-римская борьба</option>
+						    									<option  data-spec-id="388"
+						                                                     value="811221">Грепплинг</option>
+						    									<option  data-spec-id="386"
+						                                                     value="186199">Греческий язык</option>
+						    									<option  data-spec-id="386"
+						                                                     value="186187">Грузинский язык</option>
+						    									<option  data-spec-id="388"
+						                                                     value="284674">Дайвинг</option>
+						    									<option  data-spec-id="386"
+						                                                     value="397825">Датский язык</option>
+						    									<option  data-spec-id="390"
+						                                                     value="772157">Декор</option>
+						    									<option  data-spec-id="511"
+						                                                     value="764655">Детали машин</option>
+						    									<option  data-spec-id="508"
+						                                                     value="335222">Дефектология</option>
+						    									<option  data-spec-id="388"
+						                                                     value="186235">Дзюдо</option>
+						    									<option  data-spec-id="387"
+						                                                     value="480236">Диджеинг</option>
+						    									<option  data-spec-id="511"
+						                                                     value="772156">Дизайн (ВУЗ)</option>
+						    									<option  data-spec-id="390"
+						                                                     value="772183">Дизайн (проект)</option>
+						    									<option  data-spec-id="387"
+						                                                     value="1022462">Дирижирование</option>
+						    									<option  data-spec-id="387"
+						                                                     value="770062">Домра</option>
+						    									<option  data-spec-id="387"
+						                                                     value="186250">Духовые инструменты</option>
+						    									<option  data-spec-id="388"
+						                                                     value="190066">Единоборства</option>
+						    									<option  data-spec-id="385"
+						                                                     value="950040">Естествознание</option>
+						    									<option  data-spec-id="390"
+						                                                     value="772161">Живопись</option>
+						    									<option  data-spec-id="390"
+						                                                     value="863010">Журналистика</option>
+						    									<option  data-spec-id="386"
+						                                                     value="186193">Иврит</option>
+						    									<option  data-spec-id="386"
+						                                                     value="904871">Индонезийский язык</option>
+						    									<option  data-spec-id="511"
+						                                                     value="257053">Инженерная графика</option>
+						    									<option  data-spec-id="388"
+						                                                     value="861849">Инструктор тренажерного зала</option>
+						    									<option  data-spec-id="390"
+						                                                     value="905095">Интернет-маркетинг</option>
+						    									<option  data-spec-id="385"
+						                                                     value="186171">Информатика</option>
+						    									<option  data-spec-id="386"
+						                                                     value="898868">Ирландский язык</option>
+						    									<option  data-spec-id="390"
+						                                                     value="302465">Искусство Бонсай</option>
+						    									<option  data-spec-id="386"
+						                                                     value="186182">Испанский язык</option>
+						    									<option  data-spec-id="385"
+						                                                     value="186170">История</option>
+						    									<option  data-spec-id="511"
+						                                                     value="422323">История Искусств</option>
+						    									<option  data-spec-id="386"
+						                                                     value="186181">Итальянский язык</option>
+						    									<option  data-spec-id="388"
+						                                                     value="186226">Йога</option>
+						    									<option  data-spec-id="386"
+						                                                     value="186201">Казахский язык</option>
+						    									<option  data-spec-id="388"
+						                                                     value="278088">Кайтинг</option>
+						    									<option  data-spec-id="388"
+						                                                     value="341743">Капоэйра</option>
+						    									<option  data-spec-id="388"
+						                                                     value="186231">Карате</option>
+						    									<option  data-spec-id="390"
+						                                                     value="854047">Карвинг</option>
+						    									<option  data-spec-id="388"
+						                                                     value="401648">Каякинг</option>
+						    									<option  data-spec-id="390"
+						                                                     value="883619">Керамика</option>
+						    									<option  data-spec-id="388"
+						                                                     value="186234">Кикбоксинг</option>
+						    									<option  data-spec-id="390"
+						                                                     value="189261">Кинологи</option>
+						    									<option  data-spec-id="386"
+						                                                     value="186179">Китайский язык</option>
+						    									<option  data-spec-id="388"
+						                                                     value="186207">Конный спорт</option>
+						    									<option  data-spec-id="387"
+						                                                     value="964104">Контрабас</option>
+						    									<option  data-spec-id="388"
+						                                                     value="186205">Коньки</option>
+						    									<option  data-spec-id="390"
+						                                                     value="711605">Копирайтинг</option>
+						    									<option  data-spec-id="386"
+						                                                     value="186183">Корейский язык</option>
+						    									<option  data-spec-id="508"
+						                                                     value="243730">Коучи (Психотренеры)</option>
+						    									<option  data-spec-id="388"
+						                                                     value="710377">Крикет</option>
+						    									<option  data-spec-id="388"
+						                                                     value="841595">Крокет</option>
+						    									<option  data-spec-id="390"
+						                                                     value="946994">Кубик Рубика</option>
+						    									<option  data-spec-id="390"
+						                                                     value="241859">Кулинарное искусство</option>
+						    									<option  data-spec-id="511"
+						                                                     value="803592">Культурология</option>
+						    									<option  data-spec-id="511"
+						                                                     value="772165">Ландшафтная графика</option>
+						    									<option  data-spec-id="390"
+						                                                     value="815425">Ландшафтный дизайн</option>
+						    									<option  data-spec-id="386"
+						                                                     value="186198">Латинский язык</option>
+						    									<option  data-spec-id="386"
+						                                                     value="873323">Латышский язык</option>
+						    									<option  data-spec-id="388"
+						                                                     value="935381">Легкая атлетика</option>
+						    									<option  data-spec-id="511"
+						                                                     value="934788">Линейная алгебра</option>
+						    									<option  data-spec-id="385"
+						                                                     value="185017">Литература</option>
+						    									<option  data-spec-id="390"
+						                                                     value="493830">Литературное мастерство</option>
+						    									<option  data-spec-id="386"
+						                                                     value="1033760">Литовский язык</option>
+						    									<option  data-spec-id="511"
+						                                                     value="947064">Логистика</option>
+						    									<option  data-spec-id="390"
+						                                                     value="774177">Логопед-дефектолог</option>
+						    									<option  data-spec-id="390"
+						                                                     value="210580">Логопеды</option>
+						    									<option  data-spec-id="388"
+						                                                     value="186225">ЛФК</option>
+						    									<option  data-spec-id="388"
+						                                                     value="240609">Лыжи (беговые)</option>
+						    									<option  data-spec-id="511"
+						                                                     value="257055">Макроэкономика</option>
+						    									<option  data-spec-id="511"
+						                                                     value="803781">Маркетинг</option>
+						    									<option  data-spec-id="385"
+						                                                     value="186175">Математика</option>
+						    									<option  data-spec-id="511"
+						                                                     value="893226">Математический анализ</option>
+						    									<option  data-spec-id="511"
+						                                                     value="866511">Материаловедение</option>
+						    									<option  data-spec-id="511"
+						                                                     value="803912">Машиностроение</option>
+						    									<option  data-spec-id="511"
+						                                                     value="879035">Медицинская биохимия</option>
+						    									<option  data-spec-id="511"
+						                                                     value="525333">Менеджмент</option>
+						    									<option  data-spec-id="511"
+						                                                     value="851804">Микробиология</option>
+						    									<option  data-spec-id="511"
+						                                                     value="257054">Микроэкономика</option>
+						    									<option  data-spec-id="385"
+						                                                     value="859113">Мировая художественная культура (МХК)</option>
+						    									<option  data-spec-id="390"
+						                                                     value="772182">Моделирование</option>
+						    									<option  data-spec-id="390"
+						                                                     value="616289">Мозаика</option>
+						    									<option  data-spec-id="386"
+						                                                     value="764699">Монгольский язык</option>
+						    									<option  data-spec-id="389"
+						                                                     value="186241">Мотоинструкторы</option>
+						    									<option  data-spec-id="387"
+						                                                     value="191517">Музыкальное развитие</option>
+						    									<option  data-spec-id="511"
+						                                                     value="1033749">Навигация</option>
+						    									<option  data-spec-id="388"
+						                                                     value="728930">Народные танцы</option>
+						    									<option  data-spec-id="388"
+						                                                     value="191076">Настольный теннис</option>
+						    									<option  data-spec-id="390"
+						                                                     value="873332">Настройка  видео-техники</option>
+						    									<option  data-spec-id="385"
+						                                                     value="351635">Начальные классы</option>
+						    									<option  data-spec-id="511"
+						                                                     value="257052">Начертательная геометрия</option>
+						    									<option  data-spec-id="386"
+						                                                     value="186177">Немецкий язык</option>
+						    									<option  data-spec-id="386"
+						                                                     value="332983">Нидерландский язык</option>
+						    									<option  data-spec-id="386"
+						                                                     value="186186">Норвежский язык</option>
+						    									<option  data-spec-id="390"
+						                                                     value="844194">Няни и гувернеры</option>
+						    									<option  data-spec-id="385"
+						                                                     value="848824">ОБЖ</option>
+						    									<option  data-spec-id="385"
+						                                                     value="186168">Обществознание</option>
+						    									<option  data-spec-id="390"
+						                                                     value="284843">Операторское искусство</option>
+						    									<option  data-spec-id="390"
+						                                                     value="776386">Ораторское искусство</option>
+						    									<option  data-spec-id="387"
+						                                                     value="859340">Орган</option>
+						    									<option  data-spec-id="511"
+						                                                     value="866360">Организация движения транспорта</option>
+						    									<option  data-spec-id="385"
+						                                                     value="1014861">Основы экономики (школа)</option>
+						    									<option  data-spec-id="390"
+						                                                     value="864883">Основы ювелирного искусства</option>
+						    									<option  data-spec-id="388"
+						                                                     value="292533">Парапланеризм</option>
+						    									<option  data-spec-id="388"
+						                                                     value="866433">Паркур</option>
+						    									<option  data-spec-id="388"
+						                                                     value="811214">Пауэрлифтинг</option>
+						    									<option  data-spec-id="386"
+						                                                     value="860151">Персидский язык</option>
+						    									<option  data-spec-id="388"
+						                                                     value="903827">Пилатес</option>
+						    									<option  data-spec-id="388"
+						                                                     value="186240">Плавание</option>
+						    									<option  data-spec-id="390"
+						                                                     value="189260">Подготовка к школе</option>
+						    									<option  data-spec-id="388"
+						                                                     value="271628">Покер</option>
+						    									<option  data-spec-id="511"
+						                                                     value="1014217">Политология</option>
+						    									<option  data-spec-id="386"
+						                                                     value="186196">Польский язык</option>
+						    									<option  data-spec-id="386"
+						                                                     value="186194">Португальский язык</option>
+						    									<option  data-spec-id="511"
+						                                                     value="261224">Право (ВУЗ)</option>
+						    									<option  data-spec-id="385"
+						                                                     value="1014862">Правоведение</option>
+						    									<option  data-spec-id="510"
+						                                                     value="257031">Программирование</option>
+						    									<option  data-spec-id="390"
+						                                                     value="189258">Программирование разное</option>
+						    									<option  data-spec-id="510"
+						                                                     value="802566">Проектирование в IT</option>
+						    									<option  data-spec-id="511"
+						                                                     value="866356">Производственное планирование</option>
+						    									<option  data-spec-id="388"
+						                                                     value="401649">Прыжки в воду</option>
+						    									<option  data-spec-id="508"
+						                                                     value="243729">Психологи-Консультанты</option>
+						    									<option  data-spec-id="508"
+						                                                     value="243731">Психологические курсы и тренинги</option>
+						    									<option  data-spec-id="511"
+						                                                     value="216334">Психология (ВУЗ)</option>
+						    									<option  data-spec-id="508"
+						                                                     value="243732">Психотерапевты</option>
+						    									<option  data-spec-id="511"
+						                                                     value="805295">Радиоэлектроника</option>
+						    									<option  data-spec-id="390"
+						                                                     value="836319">Раннее развитие</option>
+						    									<option  data-spec-id="388"
+						                                                     value="1029699">Рафтинг</option>
+						    									<option  data-spec-id="390"
+						                                                     value="774178">Резьба по дереву</option>
+						    									<option  data-spec-id="390"
+						                                                     value="189257">Рисование</option>
+						    									<option  data-spec-id="390"
+						                                                     value="613857">Риторика</option>
+						    									<option  data-spec-id="390"
+						                                                     value="334300">Робототехника</option>
+						    									<option  data-spec-id="388"
+						                                                     value="186209">Роликовые коньки</option>
+						    									<option  data-spec-id="390"
+						                                                     value="414195">Рукоделие</option>
+						    									<option  data-spec-id="388"
+						                                                     value="802737">Рукопашный бой</option>
+						    									<option  data-spec-id="386"
+						                                                     value="190512">Румынский язык</option>
+						    									<option  data-spec-id="386"
+						                                                     value="226936">Русский как Иностранный</option>
+						    									<option  data-spec-id="385"
+						                                                     value="185016">Русский язык</option>
+						    									<option  data-spec-id="387"
+						                                                     value="726953">Саксофон</option>
+						    									<option  data-spec-id="388"
+						                                                     value="852993">Самбо</option>
+						    									<option  data-spec-id="388"
+						                                                     value="866531">Самооборона</option>
+						    									<option  data-spec-id="386"
+						                                                     value="1031957">Санскрит</option>
+						    									<option  data-spec-id="386"
+						                                                     value="186197">Сербский язык</option>
+						    									<option  data-spec-id="388"
+						                                                     value="278089">Серфинг</option>
+						    									<option  data-spec-id="387"
+						                                                     value="766012">Синтезатор</option>
+						    									<option  data-spec-id="511"
+						                                                     value="841824">Системная аналитика</option>
+						    									<option  data-spec-id="388"
+						                                                     value="487163">Скалолазание</option>
+						    									<option  data-spec-id="388"
+						                                                     value="248725">Сквош</option>
+						    									<option  data-spec-id="388"
+						                                                     value="388652">Скейтборд</option>
+						    									<option  data-spec-id="390"
+						                                                     value="467005">Скорочтение</option>
+						    									<option  data-spec-id="387"
+						                                                     value="186244">Скрипка</option>
+						    									<option  data-spec-id="390"
+						                                                     value="861635">Скульптура</option>
+						    									<option  data-spec-id="386"
+						                                                     value="1021460">Словацкий язык</option>
+						    									<option  data-spec-id="386"
+						                                                     value="699883">Словенский язык</option>
+						    									<option  data-spec-id="511"
+						                                                     value="291627">Сметное дело</option>
+						    									<option  data-spec-id="388"
+						                                                     value="186219">Сноуборд</option>
+						    									<option  data-spec-id="388"
+						                                                     value="728929">Современные танцы</option>
+						    									<option  data-spec-id="510"
+						                                                     value="941758">Создание приложений</option>
+						    									<option  data-spec-id="387"
+						                                                     value="186246">Сольфеджио</option>
+						    									<option  data-spec-id="390"
+						                                                     value="963945">Сомелье</option>
+						    									<option  data-spec-id="511"
+						                                                     value="764651">Сопротивление материалов</option>
+						    									<option  data-spec-id="508"
+						                                                     value="803682">Социальные педагоги</option>
+						    									<option  data-spec-id="511"
+						                                                     value="803899">Социология</option>
+						    									<option  data-spec-id="388"
+						                                                     value="698837">Спортивная ходьба</option>
+						    									<option  data-spec-id="511"
+						                                                     value="408269">Статистика</option>
+						    									<option  data-spec-id="511"
+						                                                     value="432808">Стилистика русского языка</option>
+						    									<option  data-spec-id="390"
+						                                                     value="493831">Стихосложение</option>
+						    									<option  data-spec-id="388"
+						                                                     value="186220">Стрельба</option>
+						    									<option  data-spec-id="388"
+						                                                     value="712039">Стретчинг</option>
+						    									<option  data-spec-id="511"
+						                                                     value="861624">Строительство</option>
+						    									<option  data-spec-id="390"
+						                                                     value="915695">Сурдоперевод</option>
+						    									<option  data-spec-id="390"
+						                                                     value="252673">Сценическая речь</option>
+						    									<option  data-spec-id="388"
+						                                                     value="186236">Тайский бокс</option>
+						    									<option  data-spec-id="386"
+						                                                     value="211345">Тайский язык</option>
+						    									<option  data-spec-id="388"
+						                                                     value="186218">Танцы</option>
+						    									<option  data-spec-id="386"
+						                                                     value="186195">Татарский язык</option>
+						    									<option  data-spec-id="388"
+						                                                     value="186217">Теннис</option>
+						    									<option  data-spec-id="511"
+						                                                     value="284840">Теоретическая механика</option>
+						    									<option  data-spec-id="511"
+						                                                     value="711836">Теория вероятности</option>
+						    									<option  data-spec-id="511"
+						                                                     value="1060522">Теория информации</option>
+						    									<option  data-spec-id="511"
+						                                                     value="764652">Теория механизмов и машин</option>
+						    									<option  data-spec-id="390"
+						                                                     value="682450">Теория первой медицинской помощи</option>
+						    									<option  data-spec-id="511"
+						                                                     value="929732">Теплогазоснабжение и вентиляция</option>
+						    									<option  data-spec-id="386"
+						                                                     value="430494">Тибетский язык</option>
+						    									<option  data-spec-id="511"
+						                                                     value="1020051">Товароведение</option>
+						    									<option  data-spec-id="388"
+						                                                     value="1031262">Триатлон</option>
+						    									<option  data-spec-id="386"
+						                                                     value="186184">Турецкий язык</option>
+						    									<option  data-spec-id="386"
+						                                                     value="909166">Туркменский язык</option>
+						    									<option  data-spec-id="388"
+						                                                     value="802738">Тхэквандо</option>
+						    									<option  data-spec-id="388"
+						                                                     value="771013">Тяжелая атлетика</option>
+						    									<option  data-spec-id="387"
+						                                                     value="186249">Ударные инструменты</option>
+						    									<option  data-spec-id="386"
+						                                                     value="186185">Украинский язык</option>
+						    									<option  data-spec-id="387"
+						                                                     value="858742">Укулеле</option>
+						    									<option  data-spec-id="511"
+						                                                     value="1062192">Управление персоналом</option>
+						    									<option  data-spec-id="386"
+						                                                     value="860777">Урду</option>
+						    									<option  data-spec-id="388"
+						                                                     value="186233">Ушу</option>
+						    									<option  data-spec-id="388"
+						                                                     value="186206">Фехтование</option>
+						    									<option  data-spec-id="388"
+						                                                     value="186203">Фигурное катание</option>
+						    									<option  data-spec-id="385"
+						                                                     value="186174">Физика</option>
+						    									<option  data-spec-id="511"
+						                                                     value="257051">Физика (ВУЗ)</option>
+						    									<option  data-spec-id="511"
+						                                                     value="866517">Физиология</option>
+						    									<option  data-spec-id="388"
+						                                                     value="186224">Физкультура</option>
+						    									<option  data-spec-id="511"
+						                                                     value="239733">Философия</option>
+						    									<option  data-spec-id="386"
+						                                                     value="186191">Финский язык</option>
+						    									<option  data-spec-id="388"
+						                                                     value="186216">Фитнес</option>
+						    									<option  data-spec-id="387"
+						                                                     value="496686">Флейта</option>
+						    									<option  data-spec-id="390"
+						                                                     value="859443">Флористика</option>
+						    									<option  data-spec-id="387"
+						                                                     value="186243">Фортепиано</option>
+						    									<option  data-spec-id="390"
+						                                                     value="227014">Фотография</option>
+						    									<option  data-spec-id="386"
+						                                                     value="186180">Французский язык</option>
+						    									<option  data-spec-id="388"
+						                                                     value="186213">Футбол</option>
+						    									<option  data-spec-id="385"
+						                                                     value="186172">Химия</option>
+						    									<option  data-spec-id="511"
+						                                                     value="702273">Химия (ВУЗ)</option>
+						    									<option  data-spec-id="386"
+						                                                     value="860732">Хинди</option>
+						    									<option  data-spec-id="388"
+						                                                     value="186221">Ходьба</option>
+						    									<option  data-spec-id="388"
+						                                                     value="186214">Хоккей</option>
+						    									<option  data-spec-id="386"
+						                                                     value="235375">Хорватский язык</option>
+						    									<option  data-spec-id="388"
+						                                                     value="712054">Хореография</option>
+						    									<option  data-spec-id="387"
+						                                                     value="935542">Хэнг драм</option>
+						    									<option  data-spec-id="388"
+						                                                     value="186230">Цигун</option>
+						    									<option  data-spec-id="390"
+						                                                     value="260428">Цирковые искусства</option>
+						    									<option  data-spec-id="385"
+						                                                     value="354520">Черчение</option>
+						    									<option  data-spec-id="386"
+						                                                     value="1031347">Чеченский язык</option>
+						    									<option  data-spec-id="386"
+						                                                     value="186189">Чешский язык</option>
+						    									<option  data-spec-id="388"
+						                                                     value="186204">Шахматы</option>
+						    									<option  data-spec-id="386"
+						                                                     value="186190">Шведский язык</option>
+						    									<option  data-spec-id="390"
+						                                                     value="481604">Швейное мастерство</option>
+						    									<option  data-spec-id="388"
+						                                                     value="811011">Шестовая акробатика</option>
+						    									<option  data-spec-id="385"
+						                                                     value="440600">Экология</option>
+						    									<option  data-spec-id="511"
+						                                                     value="257056">Эконометрика</option>
+						    									<option  data-spec-id="389"
+						                                                     value="191078">Экстремальное вождение</option>
+						    									<option  data-spec-id="387"
+						                                                     value="186248">Электрогитара</option>
+						    									<option  data-spec-id="511"
+						                                                     value="940516">Электротехника</option>
+						    									<option  data-spec-id="386"
+						                                                     value="186192">Эстонский язык</option>
+						    									<option  data-spec-id="511"
+						                                                     value="261220">Юриспруденция</option>
+						    									<option  data-spec-id="386"
+						                                                     value="186178">Японский язык</option>
+						    								</select>
+						    							</div>
+						    						</div>
+						    						<div class="col-6">
+						    							<div class="input-block">
+						    								<label>Квалификация</label>
+						    								<select data-formstyler="false" data-js-expr name="SUBJECT_LEVEL[EXPR_ID][]">
+						    									>
+						    									<option value="">Выберите значение</option>
+						    									<option  value="191790">Музыкант известной группы</option>
+						    									<option  value="191791">Музыкант неизвестной группы</option>
+						    									<option  value="191072">Начинающий специалист (опыт до 1 года)</option>
+						    									<option  value="191071">Небольшой опыт (опыт 2-5 лет)</option>
+						    									<option  value="191075">Носитель языка</option>
+						    									<option  value="191073">Опытный специалист (опыт 5-10 лет)</option>
+						    									<option  value="191074">Профессионал (опыт более10 лет)</option>
+						    									<option  value="191789">Самоучка</option>
+						    								</select>
+						    							</div>
+						    						</div>
+						    					</div>
+						    				</div>
+						    				<div class="lk-inputs-block__item lk-inputs-block__item--sum">
+						    					<div class="lk-profile-adding-list__head"></div>
+						    					<div class="js-multi-field-wrapper">
+						    						<div class="js-multi-fields">
+						    							<div class="js-multi-field">
+															<input name="SUBJECT_LEVEL[HOLDING][{INDEX}][ID][{INDEX2}]"
+									                               data-double-index data-replace-string="SUBJECT_LEVEL[HOLDING][{INDEX}][ID][{INDEX2}]"
+									                               type="hidden" value="">
+						    								<div class="grid-bottom">
+						    									<div class="col-2">
+						    										<div class="input-block">
+						    											<label>Цена</label>
+						    											<input name="SUBJECT_LEVEL[HOLDING][{INDEX}][PRICE][{INDEX2}]"
+									                                           data-double-index
+									                                           data-replace-string="SUBJECT_LEVEL[HOLDING][{INDEX}][PRICE][{INDEX2}]"
+									                                           type="text" value="">
+						    										</div>
+						    									</div>
+						    									<div class="col-2">
+						    										<div class="input-block">
+						    											<label for="">За (минут)</label>
+						    											<select name="SUBJECT_LEVEL[HOLDING][{INDEX}][TIME][{INDEX2}]"
+									                                            data-double-index
+									                                            data-replace-string="SUBJECT_LEVEL[HOLDING][{INDEX}][TIME][{INDEX2}]"
+									                                            data-formstyler="false">
+						    												<option value="60">60</option>
+						    												<option value="90">90</option>
+						    												<option value="120">120</option>
+						    											</select>
+						    										</div>
+						    									</div>
+						    									<div class="col">
+						    										<div class="input-block">
+						    											<div class="input-checkbox">
+						    												<input name="SUBJECT_LEVEL[HOLDING][{INDEX}][UF_TYPE][{INDEX2}][]"
+								                                                   data-replace-string="SUBJECT_LEVEL[HOLDING][{INDEX}][UF_TYPE][{INDEX2}][]"
+								                                                   data-prev-value data-double-index type="checkbox"
+								                                                   value="907553">		    
+						    												<label>
+						    													<span>Дистанционно</span>
+						    												</label>
+						    											</div>
+						    										</div>
+						    									</div>
+						    									<div class="col">
+						    										<div class="input-block">
+						    											<div class="input-checkbox">
+						    												<input name="SUBJECT_LEVEL[HOLDING][{INDEX}][UF_TYPE][{INDEX2}][]"
+								                                                   data-replace-string="SUBJECT_LEVEL[HOLDING][{INDEX}][UF_TYPE][{INDEX2}][]"
+								                                                   data-prev-value data-double-index type="checkbox"
+								                                                   value="907554">		    
+						    												<label>
+						    													<span>Группа</span>
+						    												</label>
+						    											</div>
+						    										</div>
+						    									</div>
+						    									<div class="col">
+						    										<div class="input-block">
+						    											<div class="input-checkbox">
+						    												<input name="SUBJECT_LEVEL[HOLDING][{INDEX}][UF_TYPE][{INDEX2}][]"
+								                                                   data-replace-string="SUBJECT_LEVEL[HOLDING][{INDEX}][UF_TYPE][{INDEX2}][]"
+								                                                   data-prev-value data-double-index type="checkbox"
+								                                                   value="907555">	    
+						    												<label>
+						    													<span>У ученика</span>
+						    												</label>
+						    											</div>
+						    										</div>
+						    									</div>
+						    									<div class="col">
+						    										<div class="input-block">
+						    											<div class="input-checkbox">
+						    												<input name="SUBJECT_LEVEL[HOLDING][{INDEX}][UF_TYPE][{INDEX2}][]"
+								                                                   data-replace-string="SUBJECT_LEVEL[HOLDING][{INDEX}][UF_TYPE][{INDEX2}][]"
+								                                                   data-prev-value data-double-index type="checkbox"
+								                                                   value="907556">		    
+						    												<label>
+						    													<span>У преподавателя</span>
+						    												</label>
+						    											</div>
+						    										</div>
+						    									</div>
+						    								</div>
+						    								<span class="js-remove-field hidden">
+						    									<a href="#">Удалить</a>
+						    								</span>
+						    							</div>
+						    						</div>
+						    						<span class="js-add-field add-element">
+						    							+
+						    							<a href="#">Добавить ещё цену</a>
+						    						</span>
+
+						    					</div>
+						    				</div>
+						    				<div class="lk-inputs-block__item">
+						    					<div class="lk-profile-adding-list__head">Категория ученика</div>
+						    					<div class="grid">
+						    						<div class="col-3">
+						    							<div class="input-block">
+						    								<div class="input-checkbox">
+						    									<input type="checkbox" name="SUBJECT_LEVEL[UF_CATEGORY][{INDEX}][]"
+					                                                   data-replace-string="SUBJECT_LEVEL[UF_CATEGORY][{INDEX}][]"
+					                                                   value="190501">						    				
+						    									<label>
+						    										<span>Дошкольник</span>
+						    									</label>
+						    								</div>
+						    							</div>
+						    						</div>
+						    						<div class="col-3">
+						    							<div class="input-block">
+						    								<div class="input-checkbox">
+						    									<input type="checkbox" name="SUBJECT_LEVEL[UF_CATEGORY][{INDEX}][]"
+					                                                   data-replace-string="SUBJECT_LEVEL[UF_CATEGORY][{INDEX}][]"
+					                                                   value="185029">						    				
+						    									<label>
+						    										<span>1-3 класс</span>
+						    									</label>
+						    								</div>
+						    							</div>
+						    						</div>
+						    						<div class="col-3">
+						    							<div class="input-block">
+						    								<div class="input-checkbox">
+						    									<input type="checkbox" name="SUBJECT_LEVEL[UF_CATEGORY][{INDEX}][]"
+					                                                   data-replace-string="SUBJECT_LEVEL[UF_CATEGORY][{INDEX}][]"
+					                                                   value="185030">						    				
+						    									<label>
+						    										<span>4-5 класс</span>
+						    									</label>
+						    								</div>
+						    							</div>
+						    						</div>
+						    						<div class="col-3">
+						    							<div class="input-block">
+						    								<div class="input-checkbox">
+						    									<input type="checkbox" name="SUBJECT_LEVEL[UF_CATEGORY][{INDEX}][]"
+					                                                   data-replace-string="SUBJECT_LEVEL[UF_CATEGORY][{INDEX}][]"
+					                                                   value="185031">						    				
+						    									<label>
+						    										<span>6-7 класс</span>
+						    									</label>
+						    								</div>
+						    							</div>
+						    						</div>
+						    						<div class="col-3">
+						    							<div class="input-block">
+						    								<div class="input-checkbox">
+						    									<input type="checkbox" name="SUBJECT_LEVEL[UF_CATEGORY][{INDEX}][]"
+					                                                   data-replace-string="SUBJECT_LEVEL[UF_CATEGORY][{INDEX}][]"
+					                                                   value="185032">						    				
+						    									<label>
+						    										<span>8-9 класс</span>
+						    									</label>
+						    								</div>
+						    							</div>
+						    						</div>
+						    						<div class="col-3">
+						    							<div class="input-block">
+						    								<div class="input-checkbox">
+						    									<input type="checkbox" name="SUBJECT_LEVEL[UF_CATEGORY][{INDEX}][]"
+					                                                   data-replace-string="SUBJECT_LEVEL[UF_CATEGORY][{INDEX}][]"
+					                                                   value="185033">						    				
+						    									<label>
+						    										<span>10-11 класс</span>
+						    									</label>
+						    								</div>
+						    							</div>
+						    						</div>
+						    						<div class="col-3">
+						    							<div class="input-block">
+						    								<div class="input-checkbox">
+						    									<input type="checkbox" name="SUBJECT_LEVEL[UF_CATEGORY][{INDEX}][]"
+					                                                   data-replace-string="SUBJECT_LEVEL[UF_CATEGORY][{INDEX}][]"
+					                                                   value="185034">						    				
+						    									<label>
+						    										<span>ЕГЭ</span>
+						    									</label>
+						    								</div>
+						    							</div>
+						    						</div>
+						    						<div class="col-3">
+						    							<div class="input-block">
+						    								<div class="input-checkbox">
+						    									<input type="checkbox" name="SUBJECT_LEVEL[UF_CATEGORY][{INDEX}][]"
+					                                                   data-replace-string="SUBJECT_LEVEL[UF_CATEGORY][{INDEX}][]"
+					                                                   value="910807">						    				
+						    									<label>
+						    										<span>ОГЭ</span>
+						    									</label>
+						    								</div>
+						    							</div>
+						    						</div>
+						    						<div class="col-3">
+						    							<div class="input-block">
+						    								<div class="input-checkbox">
+						    									<input type="checkbox" name="SUBJECT_LEVEL[UF_CATEGORY][{INDEX}][]"
+					                                                   data-replace-string="SUBJECT_LEVEL[UF_CATEGORY][{INDEX}][]"
+					                                                   value="190502">						    				
+						    									<label>
+						    										<span>Студент</span>
+						    									</label>
+						    								</div>
+						    							</div>
+						    						</div>
+						    						<div class="col-3">
+						    							<div class="input-block">
+						    								<div class="input-checkbox">
+						    									<input type="checkbox" name="SUBJECT_LEVEL[UF_CATEGORY][{INDEX}][]"
+					                                                   data-replace-string="SUBJECT_LEVEL[UF_CATEGORY][{INDEX}][]"
+					                                                   value="190505">						    				
+						    									<label>
+						    										<span>Другая</span>
+						    									</label>
+						    								</div>
+						    							</div>
+						    						</div>
+						    					</div>
+						    				</div>
+						    				<div class="lk-inputs-block__item">
+						    					<div class="lk-profile-adding-list__head">Специализация</div>
+						    					<div class="lk-profile-specialization">
+						    						<div class="lk-profile-specialization__left">
+						    							<div class="input-block">
+						    								<textarea name="SUBJECT_LEVEL[SPEC_TEXT][]" cols="30" rows="5"></textarea>
+						    							</div>
+						    						</div>
+						    						<div class="lk-profile-specialization__right">
+						    							Введите описание программ, направления в работе или специфику вашего курса.
+						    							<br/>		    
+						    							<br/>		    
+						    							До 200 символов
+						    						</div>
+						    					</div>
+						    				</div>
+						    				<div class="lk-profile__add-btn align-right">
+						    					<div class="grid-spaceBetween-middle-noGutter">
+						    						<a href="" data-cancel-button="">Отменить</a>
+						    						<a class="btn btn--big btn--bordered" href="#" data-confirm-add="">Добавить</a>
+						    					</div>
+						    				</div>
+						    			</div>
+						    		</div>
+						    		<div class="add-element">
+						    			<span>
+						    				+
+						    				<a href="#">Добавить еще предмет</a>
+						    			</span>
+						    		</div>
+						    	</div>
+						    </div>
+		    				<!-- .lk-profile__block 7 -->
 
 							<div class="lk-profile-add-info2">
 								<div class="lk-profile-add-info2__head"> <b>Дополнительная информация</b>
@@ -2598,10 +2983,9 @@
 					    </div>
 
 					    <script>
-							$('.sticky').scrollToFixed( {
-					            bottom: 0,
-					            limit: $('.sticky').offset().top
-					        });
+							  $(document).ready(function() {
+							  	floatSaveButton()
+							  });
 					    </script>
 
 					</form>

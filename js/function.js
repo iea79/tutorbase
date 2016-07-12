@@ -15,18 +15,18 @@ $(document).ready(function() {
 	});
 
     // Scroll to top
-    var top_show = 800;
-    var delay = 500;
+    // var top_show = 800;
+    // var delay = 500;
 
-    $(window).scroll(function () {
-        if ($(this).scrollTop() > top_show) $('.go-to-up').fadeIn(500);
-        else $('.go-to-up').fadeOut(500);
-    });
-    $('.go-to-up').click(function () {
-        $('body, html').animate({
-            scrollTop: 0
-        }, delay);
-    });
+    // $(window).scroll(function () {
+    //     if ($(this).scrollTop() > top_show) $('.go-to-up').fadeIn(500);
+    //     else $('.go-to-up').fadeOut(500);
+    // });
+    // $('.go-to-up').click(function () {
+    //     $('body, html').animate({
+    //         scrollTop: 0
+    //     }, delay);
+    // });
 
 
     // Drop top menu
@@ -88,7 +88,9 @@ $(document).ready(function() {
 	});
 
 	// Formstyler
-	$('select').chosen({disable_search_threshold: 32});
+	$('.catalog-filter select').chosen({disable_search_threshold: 32});
+	$('.double-select select').chosen();
+	// $('.sided-holder__right select').select2();
 
 	// UI Price
 	$("#slider").slider({
@@ -211,9 +213,12 @@ $(document).ready(function() {
 
 });
 
+
+
+// LK js ========================================================================================================================
 var filterItemTemplate =
   "<div class='active-fliters__item'>" +
-  "<span>$vuz_name</span>" +
+  "<span>{{name}}</span>" +
   "<span class='active-fliters__item-delete'></span>" +
   "</div>";
 
@@ -251,7 +256,7 @@ LkDataForms.prototype.ReloadForm = {
         timeout: 2000,
         scrollTo: false
       }).done(function () {
-        $('.select2, .select2-delay').trigger("chosen:refresh");
+        $('.select2, .select2-delay').select2();
         var lkForm = new LkDataForms();
         lkForm.init();
         TinyMce.run();
@@ -279,7 +284,8 @@ LkDataForms.prototype.AutocompleteUniver = {
 
 LkDataForms.prototype.Expr = {
   run: function () {
-    var exprList // = BX.parseJSON($('[data-select-blocks-list]').data('jsExprList'));
+    var exprList = $('[data-select-blocks-list]').data('js-expr-list');
+    // var exprList = BX.parseJSON($('[data-select-blocks-list]').data('js-expr-list'));
     var subjectChange = function () {
       var specId = $(this).find('option:selected').attr('data-spec-id') || 0;
       var container = $(this).parents('[data-select-blocks-item]');
@@ -314,7 +320,7 @@ LkDataForms.prototype.SyncFilters = {
         $("[data-active-filters=" + selectId + "]").children().remove();
         var select = $(this).find('select');
         select.find('option:selected').each(function () {
-          $("[data-active-filters=" + selectId + "]").append(filterItemTemplate.replace("$vuz_name", $(this).text()));
+          $("[data-active-filters=" + selectId + "]").append(filterItemTemplate.replace("{{name}}", $(this).text()));
           $("[data-active-filters=" + selectId + "]").children().last().attr('data-filter-id', $(this).attr('data-option-id')).attr('data-filter-option-group', $(this).closest('optgroup').data('option-group'));
         });
         $("[data-active-select=" + selectId + "]").find('.select2-search-choice').addClass('hidden');
@@ -328,7 +334,7 @@ LkDataForms.prototype.SyncFilters = {
       var select = $(elem).find('select');
 
       select.find('option:selected').each(function () {
-        $("[data-active-filters=" + selectId + "]").append(filterItemTemplate.replace("$vuz_name", $(this).text()));
+        $("[data-active-filters=" + selectId + "]").append(filterItemTemplate.replace("{{name}}", $(this).text()));
         $("[data-active-filters=" + selectId + "]").children().last().attr('data-filter-id', $(this).attr('data-option-id')).attr('data-filter-option-group', $(this).closest('optgroup').data('option-group'));
       });
 
@@ -350,7 +356,7 @@ LkDataForms.prototype.SyncFilters = {
     function addItem(items, selectId) {
       var currentSelect = $("[data-active-filters=" + selectId + "]");
       items.forEach(function (val) {
-        currentSelect.append(filterItemTemplate.replace("$vuz_name", val));
+        currentSelect.append(filterItemTemplate.replace("{{name}}", val));
         currentSelect.children().last().attr('data-filter-id', $(this).attr('data-option-id'));
       });
     }
@@ -540,12 +546,12 @@ LkDataForms.prototype.DataTabsBlocks = {
     function firstInit() {
 
 
-      $(list).children().not('[data-tabs-clone]').find('.lk-profile-direction-bind').find('select').trigger("chosen:refresh");
+      $(list).children().not('[data-tabs-clone]').find('.lk-profile-direction-bind').find('select').select2();
 
       $(list).children().not('[data-tabs-clone]').each(function () {
         var input = $(this).find('[data-new-block-name]');
         input.each(function () {
-          $(this).closest(initer).find(filters).find('.active-fliters__list').append(filterItemTemplate.replace("$vuz_name", $(this).val()));
+          $(this).closest(initer).find(filters).find('.active-fliters__list').append(filterItemTemplate.replace("{{name}}", $(this).val()));
         });
 
       });
@@ -560,7 +566,7 @@ LkDataForms.prototype.DataTabsBlocks = {
 
       // Переиницализация селекта
 
-      initer.find(list).children('.active').find('select.select2-delayed').val({}).trigger("chosen:refresh");
+      initer.find(list).children('.active').find('select.select2-delayed').select2({});
 
 
       $(list).find('.select2-search-choice').each(function () {
@@ -651,7 +657,7 @@ LkDataForms.prototype.DataTabsBlocks = {
             .closest(initer)
             .find(filters)
             .find('.active-fliters__list')
-            .append(filterItemTemplate.replace("$vuz_name", $(e.target).closest(initer).find('[data-tabs-blocks-list]').children().last().prev().find('[data-new-block-name]').val()));
+            .append(filterItemTemplate.replace("{{name}}", $(e.target).closest(initer).find('[data-tabs-blocks-list]').children().last().prev().find('[data-new-block-name]').val()));
           $(e.target).closest(initer).find(filters).show();
           $(e.target).closest(initer).find(filters).find('.active-fliters__item').removeClass('active');
           $(e.target).closest(initer).find(filters).find('.active-fliters__item').last().addClass('active');
@@ -714,7 +720,7 @@ LkDataForms.prototype.DataTabsBlocks = {
 
       // Переиницализация селекта
 
-      $(_this).closest(initer).find(list).children().last().find('select.select2-delayed').val({}).trigger("chosen:refresh");
+      $(_this).closest(initer).find(list).children().last().find('select.select2-delayed').select2({});
 
       // Опять переносим элемент для клонирования в конец
 
@@ -754,7 +760,7 @@ LkDataForms.prototype.TabsSelectSync = {
       $(list).children().not('[data-tabs-clone]').each(function () {
         var select = $(this).find(selectSyncer);
         select.find('option:selected').each(function () {
-          $(this).closest(initer).find(filters).find(filtersList).append(filterItemTemplate.replace("$vuz_name", $(this).text()));
+          $(this).closest(initer).find(filters).find(filtersList).append(filterItemTemplate.replace("{{name}}", $(this).text()));
           $(this).closest(initer).find(filters).find(filtersList).children().last().attr('data-select-id', $(this).val());
         });
       });
@@ -949,7 +955,7 @@ LkDataForms.prototype.TabsSelectSync = {
       $(list).children().not('[data-tabs-clone]').each(function () {
         var select = $(this).find(selectSyncer);
         select.find('option:selected').each(function () {
-          $(this).closest(initer).find(filters).find(filtersList).append(filterItemTemplate.replace("$vuz_name", $(this).text()));
+          $(this).closest(initer).find(filters).find(filtersList).append(filterItemTemplate.replace("{{name}}", $(this).text()));
           $(this).closest(initer).find(filters).find(filtersList).children().last().attr('data-select-id', $(this).val());
         });
 
@@ -1069,17 +1075,18 @@ function uploadHandler(uploadUrl) {
       var inputTarget = $(this).closest('.lk-inputs-block__item').find('input[name*=SCAN_IDS]');
       var template = "" +
         "<div>" +
-        "<span class='green-color'>Загружено: <a class='fancybox' href='{{link}}'>$vuz_name</a> ({{size_text}})</span>" +
+        "<span class='green-color'>Загружено: <a class='fancybox' href='{{link}}'>{{name}}</a> ({{size_text}})</span>" +
         "<span class='scan-files-loaded__delete' data-file-id='{{id}}'></span>" +
         "</div>";
       uploadContainer.find('.error').hide();
       if (data.result.error && data.result.error.length) {
         uploadContainer.find('.error').show();
+        console.log('error')
       }
       if (!data.result.id) return false;
 
       $(this).closest('.lk-inputs-block__item').find(uploadContainer).append(template.
-          replace('$vuz_name', data.result.name).
+          replace('{{name}}', data.result.name).
           replace('{{link}}', data.result.full_link).
           replace('{{size_text}}', data.result['size_text']).
           replace('{{id}}', data.result.id)
@@ -1100,7 +1107,7 @@ function uploadHandler(uploadUrl) {
         "<img src='{{image-url}}' alt=''>" +
         "</div>" +
         "<div class='lk-profile-certifs__name'>" +
-        "$vuz_name" +
+        "{{name}}" +
         "</div>" +
         "<div class='lk-profile-certifs__size'>" +
         "({{size_text}})" +
@@ -1115,7 +1122,7 @@ function uploadHandler(uploadUrl) {
       if (!data.result.id) return false;
 
       uploadContainer.children().last().before(template.
-          replace('$vuz_name', data.result.name).
+          replace('{{name}}', data.result.name).
           replace('{{size_text}}', data.result['size_text']).
           replace('{{id}}', data.result.id).
           replace('{{id}}', data.result.id).
@@ -1220,6 +1227,7 @@ $('.js-add-field, .js-multi-field .js-remove-field').unbind('click');
 $('.js-multi-field-wrapper').each(function () {
   var wrapper = $('.js-multi-fields', this);
   $('.js-add-field', $(this)).click(function (e) {
+  	e.preventDefault();
     var container = $('.js-multi-field:first-child', wrapper).clone(true).appendTo(wrapper);
     container.find('input').not('[data-prev-value]').val('');
     container.find(':input').inputmask();
@@ -1242,3 +1250,251 @@ $('.js-multi-field-wrapper').each(function () {
 
 $(document).ready(multiFieldCallBack);
 $(document).on('multi_field::refresh', multiFieldCallBack);
+
+// Components ============================================================================================================
+window.ApplicationGlobal = {
+    Components: {},
+    /**
+     * Front controller application, init all plugin
+     * and event handler
+     */
+
+    addComponent: function(name, object) {
+        this.Components[name] = object;
+        object.run();
+        if(object.resizeFunctions != null && typeof(object.resizeFunctions) == "function") {
+            $(window).on("resize", function() {
+
+            });
+        }
+        if(object.scrollFunctions != null && typeof(object.scrollFunctions) == "function") {
+            $(window).on("scroll", function() {
+            });
+        }
+    }
+};
+
+function floatSaveButton() {
+    var controlFixed = $('.float-save-button');
+    if (controlFixed.length) {
+      controlFixed.scrollToFixed({
+        bottom: 0,
+        limit: controlFixed.offset().top,
+      });
+    }
+}
+
+$(function() {
+
+    $.fn.toggleText = function(t1, t2) {
+        if (this.text() == t1) this.text(t2);
+        else this.text(t1);
+        return this;
+    };
+
+
+
+    var Main = {
+
+        run: function() {
+            $(":input").inputmask();
+            $('[data-toggle=tooltip]').tooltip();
+            $('.fancybox').fancybox();
+        }
+
+    };
+
+    var Anchors = {
+        run: function() {
+            var initer = $('[data-anchor]');
+
+            initer.on('click', function() {
+                var el = $(this).attr('href');
+                $('body, html').animate({
+                    scrollTop: $(el).offset().top
+                }, 500);
+                return false;
+            });
+        }
+    };
+
+    var GoToUp = {
+        run: function() {
+            var initer = $('.go-to-up');
+            var top_show = 350;
+            var delay = 500; // Задержка прокрутки
+            $(window).on('scroll', function () {
+                if ($(this).scrollTop() > top_show) initer.fadeIn();
+                else initer.fadeOut();
+            });
+            initer.click(function () {
+                $('body, html').animate({
+                    scrollTop: 0
+                }, delay);
+            });
+        }
+    };
+
+    var TextOpener = {
+        run: function() {
+            var opener = $('[data-text-opener]');
+
+            opener.on('click', function() {
+                $(this)
+                    .closest('[data-text-collapse]')
+                    .toggleClass('open')
+                    .find('.text-hidden')
+                    .toggleClass('open');
+
+                $(this)
+                    .find('span')
+                    .toggleText($(this).find('a').data('shown'), $(this).find('a').data('closed'));
+
+                return false;
+            });
+        }
+    }
+
+    var FloatedMenu = {
+        run: function() {
+            var initer = $('[data-floated-menu]');
+            if (initer.length) {
+                var initerPos = initer.offset().top;
+                var initerPosEnd = initer.closest('.content').offset().top + initer.closest('.content').innerHeight() - initer.innerHeight();
+
+                $(window).on('scroll', function() {
+                    if ($(this).scrollTop() > initerPos) {
+                        initer.addClass('floated');
+                    } else if (initer.hasClass('floated')) {
+                        initer.removeClass('floated');
+                    }
+
+                    if ($(this).scrollTop() > initerPosEnd) {
+                        initer.removeClass('floated');
+                    }
+                });
+            }
+        }
+    };
+
+    var Selects = {
+
+        run: function() {
+            this.init();
+        },
+
+        init: function() {
+            var initer = $("select.select2");
+            initer.select2({
+                width: 'resolve'
+            });
+        }
+
+    };
+
+    var CatalogFiltersShow = {
+        run: function () {
+            var initer = $('.show-filters');
+            var holder = $('.catalog-filter');
+
+            initer.on('click', function () {
+                initer.toggleClass('up down');
+                holder.toggleClass('catalog-filter--open');
+                return false;
+            });
+        }
+    };
+
+    var ToggleTeacherAddInfo = {
+        run: function() {
+            var openableItem = $('.teacher-card-info__openable');
+            var opener = $('.teacher-card-info__links .dotted-element');
+
+            opener.on('click', function() {
+                $(this).closest(openableItem).toggleClass('opened closed');
+                $(this).find('span').toggleText($(this).data('shown'), $(this).data('closed'));
+
+                return false;
+            });
+        }
+    };
+
+    var RemoveBlock = {
+        run: function () {
+            var initer = $('[data-remove]');
+
+                $("body").on('click', '[data-remove]', function(e) {
+                $(initer.data('remove')).addClass( 'disappear' ).onCSSTransitionEnd(function() {
+                    $(initer.data('remove')).remove();
+                });
+
+                return false;
+            });
+        }
+    };
+
+    var ClickOnCheckbox = {
+        run: function() {
+            var initer = $('.input-checkbox');
+
+            $('body').on('click', '.input-checkbox',  function(e) {
+                var _this = e.target;
+                var input = $(_this).closest('.input-checkbox')
+                if (!input.find('label')[0].hasAttribute('for')) {
+                    input.find('input[type=checkbox]').trigger('click');
+                }
+            });
+        }
+    };
+    //
+    //var filterItemTemplate =
+    //    "<div class='active-fliters__item'>" +
+    //    "<span>{{name}}</span>" +
+    //    "<span class='active-fliters__item-delete'></span>" +
+    //    "</div>";
+
+
+    var Dropdown = {
+
+        run: function() {
+            var dropdownHolder = $('.dropdown-menu');
+            var dropdownOpener = $('.header-dropdown-menu__wrap');
+
+            dropdownOpener.on('click', function() {
+                //dropdownHolder.css('height', $(document).height() - 45);
+                dropdownHolder.toggleClass('opened');
+                dropdownOpener.toggleClass('opened');
+            });
+
+            $(document).on('click', function(e) {
+                if (!$(e.target).closest('.dropdown-menu').length && !$(e.target).closest(dropdownOpener).length) {
+                    dropdownHolder.removeClass('opened');
+                    dropdownOpener.removeClass('opened');
+                }
+            });
+
+            $(document).on('touchstart', function(e) {
+                if (!$(e.target).closest('.dropdown-menu').length && !$(e.target).closest(dropdownOpener).length) {
+                    dropdownHolder.removeClass('opened');
+                    dropdownOpener.removeClass('opened');
+                }
+            });
+
+        }
+    };
+
+    window.ApplicationGlobal.addComponent("Main", Main);
+    window.ApplicationGlobal.addComponent("Dropdown", Dropdown);
+    window.ApplicationGlobal.addComponent("ToggleTeacherAddInfo", ToggleTeacherAddInfo);
+    window.ApplicationGlobal.addComponent("Anchors", Anchors);
+    window.ApplicationGlobal.addComponent("FloatedMenu", FloatedMenu);
+    window.ApplicationGlobal.addComponent("TextOpener", TextOpener);
+    window.ApplicationGlobal.addComponent("RemoveBlock", RemoveBlock);
+    window.ApplicationGlobal.addComponent("CatalogFiltersShow", CatalogFiltersShow);
+    window.ApplicationGlobal.addComponent("ClickOnCheckbox", ClickOnCheckbox);
+    window.ApplicationGlobal.addComponent("GoToUp", GoToUp);
+});
+
+
+
+
