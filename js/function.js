@@ -30,11 +30,11 @@ $(document).ready(function() {
 
 
     // Drop top menu
-    $('.header-dropdown-menu__wrap').on('click', function(event) {
-    	event.preventDefault();
-    	$(this).toggleClass('opened');
-    	$(this).parent().find('.dropdown-menu').toggleClass('opened');
-    });
+    // $('.header-dropdown-menu__wrap').on('click', function(event) {
+    // 	event.preventDefault();
+    // 	$(this).toggleClass('opened');
+    // 	$(this).parent().find('.dropdown-menu').toggleClass('opened');
+    // });
 
     // Main slider news
     $('.owl-carousel').slick({
