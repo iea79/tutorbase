@@ -211,6 +211,142 @@ $(document).ready(function() {
 	$('.tel').inputmask({"mask": "+9 (999) 999 99 99"});
 
 
+
+  ////////////////////////////////////////////////////////////////////////////////////////////////////
+  // Add/change avatar
+  $(".personal-photo-input").change(function () {
+
+      var name = $(this).val().lastIndexOf('\\') + 1;
+
+      var filesExt = ['jpg', 'gif', 'png', 'bmp'];
+      var fileName = $(this).val().slice(name);
+      var parts = $(this).val().split('.');
+      var realVal = $(this).val();
+      var lastIndex = realVal.lastIndexOf('\\') + 1;
+      var rezultLoad = $(this).closest('.lk-profile__author-photo').find('.loaded');
+
+      if (filesExt.join().search(parts[parts.length - 1]) != -1){
+
+          if(lastIndex !== -1) {
+              readURLPhotoUser(this);
+              rezultLoad.html('<span class="green-color">Загружено: ' + fileName + '</span>');
+          }
+      } else {
+          rezultLoad.html('Wrong file format!');
+      }
+
+  });
+
+  // Add/change scan
+  $("body").on('change', '.scan-file', function(event) {
+
+      var name = $(this).val().lastIndexOf('\\') + 1;
+
+      var filesExt = ['jpg', 'gif', 'png', 'bmp'];
+      var fileName = $(this).val().slice(name);
+      var parts = $(this).val().split('.');
+      var realVal = $(this).val();
+      var lastIndex = realVal.lastIndexOf('\\') + 1;
+      var rezultLoad = $(this).closest('.lk-inputs-block-scan').find('.scan-files-loaded');
+
+      if (filesExt.join().search(parts[parts.length - 1]) != -1){
+
+          if(lastIndex !== -1) {
+              rezultLoad.html('<div>Загружено: <span class="green-color">' +fileName+ '</span><span class="scan-files-loaded__delete" style="display: inline-block;font-size: 23px;margin-left: 5px;color: #a24b10;cursor: pointer;">×</span></div>');
+          }
+      } else {
+          rezultLoad.html('Wrong file format!');
+      }
+  });
+  // Delete scan
+  $('.lk-inputs-block-scan').on('click', '.scan-files-loaded__delete', function(event) {
+      
+      var wrapp = $(this).closest('.lk-inputs-block-scan');
+
+      wrapp.find('.scan-file').remove();
+      wrapp.find('.lk-inputs-block-scan__add').append('<input type="file" class="scan-file" name="SCAN_FILES" value="" data-emulate="false">');
+
+      $(this).parent().remove();
+    
+  });
+
+  // Add/change certificat
+  $("body").on('change', '.certif-file', function() {
+
+      var name = $(this).val().lastIndexOf('\\') + 1;
+      var template = 
+          '<div class="lk-profile-certifs__item lk-profile-certifs__item--add">' +
+          '<input type="file" class="certif-file form-control" name="CERTIF_FILES" value="" data-emulate="false">' +
+          '</div>';
+
+      var rezultTemplate =
+        "<div class='lk-profile-certifs__img'>" +
+        "<img src='' alt=''>" +
+        "</div>" +
+        "<div class='lk-profile-certifs__name'>" +
+        "</div>" +
+        "<div class='lk-profile-certifs__remove'></div>";
+
+      var rezultLoadTempl = $(this).closest('.lk-profile-certifs__item');
+
+      var filesExt = ['jpg', 'gif', 'png', 'bmp', 'pdf'];
+      var fileName = $(this).val().slice(name);
+      var parts = $(this).val().split('.');
+      var realVal = $(this).val();
+      var lastIndex = realVal.lastIndexOf('\\') + 1;
+      var firstBoxImg = $(this).closest('.lk-profile-certifs > div:nth-child(2)');
+      
+
+      if (filesExt.join().search(parts[parts.length - 1]) != -1){
+
+          if(lastIndex !== -1) {
+
+            rezultLoadTempl.removeClass('lk-profile-certifs__item--add').after(template);
+            $(this).css('display', 'none').before(rezultTemplate);
+            readURLPhotoCert(this);
+            rezultLoadTempl.addClass('only_remove').find('.lk-profile-certifs__name').html(fileName);
+            // firstBoxImg.find('.lk-profile-certifs__name').html(fileName);
+
+          }
+      } else {
+          rezultLoadTempl.removeClass('lk-profile-certifs__item--add').after(template);
+          $(this).css('display', 'none').before(rezultTemplate);
+          rezultLoadTempl.addClass('only_remove').find('.lk-profile-certifs__img').html('Wrong file format!');
+      }
+  });
+  // Delete certificat
+  $('.lk-profile-certifs').on('click', '.lk-profile-certifs__remove', function(event) {
+
+      $(this).parent().remove();
+    
+  });
+
+  // Get url photo
+  function readURLPhotoUser(input) {
+      if (input.files && input.files[0]) {
+          var drImg = $('.lk-profile__author-photo img');
+          var reader = new FileReader();
+
+          reader.onload = function (e) {
+              $(drImg).attr('src', e.target.result);
+          }
+
+          reader.readAsDataURL(input.files[0]);
+      }
+  }
+  function readURLPhotoCert(input) {
+      if (input.files && input.files[0]) {
+          var certImg = $('.lk-profile-certifs > div:not(.only_remove) img');
+          var reader = new FileReader();
+
+          reader.onload = function (e) {
+              $(certImg).attr('src', e.target.result);
+          }
+
+          reader.readAsDataURL(input.files[0]);
+      }
+  }
+
 });
 
 
@@ -324,6 +460,8 @@ LkDataForms.prototype.SyncFilters = {
           $("[data-active-filters=" + selectId + "]").children().last().attr('data-filter-id', $(this).attr('data-option-id')).attr('data-filter-option-group', $(this).closest('optgroup').data('option-group'));
         });
         $("[data-active-select=" + selectId + "]").find('.select2-search-choice').addClass('hidden');
+        // addButton.trigger('click');
+        console.log('firstInit')
       });
     }
 
@@ -340,6 +478,7 @@ LkDataForms.prototype.SyncFilters = {
 
       $("[data-active-select=" + selectId + "]").find('.select2-search-choice').addClass('hidden');
 
+        console.log('render')
     }
 
     function addClick() {
@@ -348,6 +487,8 @@ LkDataForms.prototype.SyncFilters = {
         render($(e.target).closest('[data-active-select]'));
 
         LkDataForms.prototype.ToggleLkFiltersList.run();
+
+        console.log('addClick')
 
         return false;
       });
@@ -359,14 +500,15 @@ LkDataForms.prototype.SyncFilters = {
         currentSelect.append(filterItemTemplate.replace("{{name}}", val));
         currentSelect.children().last().attr('data-filter-id', $(this).attr('data-option-id'));
       });
+        console.log('addItem')
     }
 
 
     $("body").on('click', '[data-active-filters] .active-fliters__item-delete', function (e) {
       removeItem(e);
-      //if ($(e.target).parent('[data-filter-id]')) {
-      //    LkDataForms.prototype.PlacesChoise.checkAdded();
-      //}
+      if ($(e.target).parent('[data-filter-id]')) {
+         LkDataForms.prototype.PlacesChoise.checkAdded();
+      }
     });
 
     function removeItem(el) {
@@ -383,7 +525,9 @@ LkDataForms.prototype.SyncFilters = {
       });
 
       LkDataForms.prototype.FormMultiple.run();
+        console.log('removeItem')
     }
+
   }
 };
 
@@ -562,7 +706,9 @@ LkDataForms.prototype.DataTabsBlocks = {
         initer.find(list).children().last().removeClass('active');
       }
 
+
       initer.find(filters).find('.active-fliters__list').children().first().addClass('active');
+
 
       // Переиницализация селекта
 
@@ -704,7 +850,7 @@ LkDataForms.prototype.DataTabsBlocks = {
       $(_this).closest(initer).find(list).children().siblings().removeClass('active');
       $(_this).closest(initer).find(list).append(copyBlockClean);
       $(_this).closest(initer).find(filters).find('.active-fliters__item').removeClass('active');
-      //$(_this).closest(initer).find(filters).hide();
+      $(_this).closest(initer).find(filters).hide();
 
       $(_this).closest(initer).find(list).children()
         .last()
@@ -727,7 +873,7 @@ LkDataForms.prototype.DataTabsBlocks = {
       $(_this).closest(initer).find(list).append($(_this).closest(initer).find('[data-tabs-clone]'));
 
       LkDataForms.prototype.FormMultiple.run()
-      uploadHandler(window.location.pathname);
+      // uploadHandler(window.location.pathname);
     }
   }
 };
@@ -827,7 +973,7 @@ LkDataForms.prototype.TabsSelectSync = {
       closest.find(list).children().removeClass('active').first().addClass('active');
 
       if (!closest.find(filters).find('.active-fliters__list').children().hasClass('active-fliters__item')) {
-        //closest.children('.add-element').trigger('click');
+        closest.children('.add-element').trigger('click');
         addElem(addElem2);
 
         closest.find(list).children().last().removeClass('active');
@@ -1028,7 +1174,9 @@ LkDataForms.prototype.ToggleLkFiltersList = {
     $(initer).each(function () {
 
       if ($(this).innerHeight() > 294) {
+      console.log(data)
         if (!$(this).next().length) {
+      console.log(data)
           $(this).after('<div class="lk-display-filters" data-lk-display-filters="' + $(this).data('active-filters') + '">Показать все</div>');
 
           $(this).next('.lk-display-filters').on('click', function (e) {
@@ -1039,9 +1187,11 @@ LkDataForms.prototype.ToggleLkFiltersList = {
 
             if (elem.hasClass('shown')) {
               $(this).text('Показать все');
+      console.log(data)
               elem.removeClass('shown');
             } else {
               $(this).text('Скрыть');
+      console.log(data)
               elem.addClass('shown');
             }
 
@@ -1049,6 +1199,7 @@ LkDataForms.prototype.ToggleLkFiltersList = {
 
         }
       } else {
+      console.log(data)
         $(this).parent().find('.lk-display-filters').remove();
       }
 
@@ -1064,105 +1215,110 @@ $(function () {
 });
 
 
-deleteFile();
+// deleteFile();
 
-function uploadHandler(uploadUrl) {
-  $('.scan-file').fileupload({
-    dataType: 'json',
-    url: addUrlParam(uploadUrl, 'scan_upload', 'Y'),
-    done: function (e, data) {
-      var uploadContainer = $('.scan-files-loaded');
-      var inputTarget = $(this).closest('.lk-inputs-block__item').find('input[name*=SCAN_IDS]');
-      var template = "" +
-        "<div>" +
-        "<span class='green-color'>Загружено: <a class='fancybox' href='{{link}}'>{{name}}</a> ({{size_text}})</span>" +
-        "<span class='scan-files-loaded__delete' data-file-id='{{id}}'></span>" +
-        "</div>";
-      uploadContainer.find('.error').hide();
-      if (data.result.error && data.result.error.length) {
-        uploadContainer.find('.error').show();
-        console.log('error')
-      }
-      if (!data.result.id) return false;
+// function uploadHandler(uploadUrl) {
+//   $('.scan-file').fileupload({
+//     dataType: 'json',
+//     url: addUrlParam(uploadUrl, 'scan_upload', 'Y'),
+//     done: function (e, data) {
+//       console.log(data)
+//       var uploadContainer = $('.scan-files-loaded');
+//       var inputTarget = $(this).closest('.lk-inputs-block__item').find('input[name*=SCAN_IDS]');
+//       var template = "" +
+//         "<div>" +
+//         "<span class='green-color'>Загружено: <a class='fancybox' href='{{link}}'>{{name}}</a> ({{size_text}})</span>" +
+//         "<span class='scan-files-loaded__delete' data-file-id='{{id}}'></span>" +
+//         "</div>";
+//       uploadContainer.find('.error').hide();
+//       if (data.result.error && data.result.error.length) {
+//         console.log(data)
+//         uploadContainer.find('.error').show();
+//         console.log('error')
+//       }
+//       if (!data.result.id) return false;
 
-      $(this).closest('.lk-inputs-block__item').find(uploadContainer).append(template.
-          replace('{{name}}', data.result.name).
-          replace('{{link}}', data.result.full_link).
-          replace('{{size_text}}', data.result['size_text']).
-          replace('{{id}}', data.result.id)
-      );
+//       $(this).closest('.lk-inputs-block__item').find(uploadContainer).append(template.
+//           replace('{{name}}', data.result.name).
+//           replace('{{link}}', data.result.full_link).
+//           replace('{{size_text}}', data.result['size_text']).
+//           replace('{{id}}', data.result.id)
+//       );
 
-      addFileId(data.result.id, inputTarget);
-    }
-  });
+//       addFileId(data.result.id, inputTarget);
+//     }
+//   });
 
-  $('.certif-file').fileupload({
-    dataType: 'json',
-    url: addUrlParam(uploadUrl, 'certif_upload', 'Y'),
-    done: function (e, data) {
-      var uploadContainer = $('.lk-profile-certifs');
-      var template =
-        "<div class='lk-profile-certifs__item'>" +
-        "<div class='lk-profile-certifs__img'>" +
-        "<img src='{{image-url}}' alt=''>" +
-        "</div>" +
-        "<div class='lk-profile-certifs__name'>" +
-        "{{name}}" +
-        "</div>" +
-        "<div class='lk-profile-certifs__size'>" +
-        "({{size_text}})" +
-        "</div>" +
-        "<div class='lk-profile-certifs__remove' data-file-id='{{id}}'></div>" +
-        "<input name='CERTIF_IDS[]' type='hidden' value='{{id}}' />" +
-        "</div>";
-      uploadContainer.find('.error').hide();
-      if (data.result.error && data.result.error.length) {
-        uploadContainer.find('.error').show();
-      }
-      if (!data.result.id) return false;
+//   $('.certif-file').fileupload({
+//     dataType: 'json',
+//     url: addUrlParam(uploadUrl, 'certif_upload', 'Y'),
+//     done: function (e, data) {
+//       console.log(data)
+//       var uploadContainer = $('.lk-profile-certifs');
+//       var template =
+//         "<div class='lk-profile-certifs__item'>" +
+//         "<div class='lk-profile-certifs__img'>" +
+//         "<img src='{{image-url}}' alt=''>" +
+//         "</div>" +
+//         "<div class='lk-profile-certifs__name'>" +
+//         "{{name}}" +
+//         "</div>" +
+//         "<div class='lk-profile-certifs__size'>" +
+//         "({{size_text}})" +
+//         "</div>" +
+//         "<div class='lk-profile-certifs__remove' data-file-id='{{id}}'></div>" +
+//         "<input name='CERTIF_IDS[]' type='hidden' value='{{id}}' />" +
+//         "</div>";
+//       uploadContainer.find('.error').hide();
+//       if (data.result.error && data.result.error.length) {
+//       console.log(data)
+//         uploadContainer.find('.error').show();
+//       }
+//       if (!data.result.id) return false;
 
-      uploadContainer.children().last().before(template.
-          replace('{{name}}', data.result.name).
-          replace('{{size_text}}', data.result['size_text']).
-          replace('{{id}}', data.result.id).
-          replace('{{id}}', data.result.id).
-          replace('{{image-url}}', data.result.resize_link)
-      );
-    }
-  });
+//       uploadContainer.children().last().before(template.
+//           replace('{{name}}', data.result.name).
+//           replace('{{size_text}}', data.result['size_text']).
+//           replace('{{id}}', data.result.id).
+//           replace('{{id}}', data.result.id).
+//           replace('{{image-url}}', data.result.resize_link)
+//       );
+//     }
+//   });
 
-  $('.personal-photo-input').fileupload({
-    dataType: 'json',
-    url: self.addUrlParam(uploadUrl, 'PERSONAL_PHOTO', 'Y'),
-    done: function (e, data) {
-      $('.header-logined img, .img-login img').attr('src', data.result.imageheader.src);
-      $('.personal-photo img').attr('src', data.result.image.src);
-    }
-  });
+//   $('.personal-photo-input').fileupload({
+//     dataType: 'json',
+//     url: self.addUrlParam(uploadUrl, 'PERSONAL_PHOTO', 'Y'),
+//     done: function (e, data) {
+//       console.log(data)
+//       $('.header-logined img, .img-login img').attr('src', data.result.imageheader.src);
+//       $('.personal-photo img').attr('src', data.result.image.src);
+//     }
+//   });
 
-  $('.download-single-file').each(function () {
-    var $this = $(this);
-    var container = $this.parents('.download-single-container');
-    var param = $this.attr('data-download-single-param');
-    $this.fileupload({
-      dataType: 'json',
-      url: self.addUrlParam(uploadUrl, param, 'Y'),
-      done: function (e, data) {
-        if (data.result.id > 0) {
-          container.find('.download-single-id').val(data.result.id);
-          var imageBlock = container.find('.download-single-img');
-          var imageType = imageBlock.attr('data-image-type');
-          if (imageType && imageType == 'long') {
-            container.find('.download-single-img img').attr('src', data.result.resize_link_long);
-          } else {
-            container.find('.download-single-img img').attr('src', data.result.resize_link);
-          }
-          imageBlock.show();
-        }
-      }
-    });
-  })
-}
+//   $('.download-single-file').each(function () {
+//     var $this = $(this);
+//     var container = $this.parents('.download-single-container');
+//     var param = $this.attr('data-download-single-param');
+//     $this.fileupload({
+//       dataType: 'json',
+//       url: self.addUrlParam(uploadUrl, param, 'Y'),
+//       done: function (e, data) {
+//         if (data.result.id > 0) {
+//           container.find('.download-single-id').val(data.result.id);
+//           var imageBlock = container.find('.download-single-img');
+//           var imageType = imageBlock.attr('data-image-type');
+//           if (imageType && imageType == 'long') {
+//             container.find('.download-single-img img').attr('src', data.result.resize_link_long);
+//           } else {
+//             container.find('.download-single-img img').attr('src', data.result.resize_link);
+//           }
+//           imageBlock.show();
+//         }
+//       }
+//     });
+//   })
+// }
 
 function addFileId(fileId, inputTarget) {
   var fileList = inputTarget.val().split(',');
@@ -1182,24 +1338,24 @@ function removeFileId(fileid, inputTarget) {
   inputTarget.val(fileListNew.join(','));
 }
 
-function deleteFile() {
+// function deleteFile() {
 
-  $(document).on('click', '.scan-files-loaded__delete', function () {
-    var fileId = $(this).attr('data-file-id');
-    var inputTarget = $(this).closest('.lk-inputs-block-scan').find('input[name*=_IDS]');
-    if (inputTarget.length > 0)
-      removeFileId(fileId, inputTarget);
-    $(this).parent().remove();
-  });
+//   $(document).on('click', '.scan-files-loaded__delete', function () {
+//     var fileId = $(this).attr('data-file-id');
+//     var inputTarget = $(this).closest('.lk-inputs-block-scan').find('input[name*=_IDS]');
+//     if (inputTarget.length > 0)
+//       removeFileId(fileId, inputTarget);
+//     $(this).parent().remove();
+//   });
 
-  $(document).on('click', '.lk-profile-certifs__remove', function () {
-    var fileId = $(this).attr('data-file-id');
-    var inputTarget = $(this).closest('.lk-profile-certifs').find('input[name*=_IDS]');
-    if (inputTarget.length > 0)
-      removeFileId(fileId, inputTarget);
-    $(this).parent().remove();
-  });
-}
+//   $(document).on('click', '.lk-profile-certifs__remove', function () {
+//     var fileId = $(this).attr('data-file-id');
+//     var inputTarget = $(this).closest('.lk-profile-certifs').find('input[name*=_IDS]');
+//     if (inputTarget.length > 0)
+//       removeFileId(fileId, inputTarget);
+//     $(this).parent().remove();
+//   });
+// }
 
 function addUrlParam(search, key, val) {
   var newParam = key + '=' + val,
